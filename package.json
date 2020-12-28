@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "start": "http-server . -p 80"
+    "start": "http-server . -p PORT"
   },
   "type": "commonjs",
   "engines": {
