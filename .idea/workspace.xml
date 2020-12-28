@@ -1,43 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="elder.js start version">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/elder.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/netlify.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon-typescript.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nodemon.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rollup.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample.tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cleanPublic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BlogTeaser.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Clock.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HookDetail.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/Layout.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/Blog.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/getting-started.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/how-to-build-a-blog-with-elderjs.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/is-elderjs-right-for-you.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/blog/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/cv.ru.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/cv.ru.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/home/Home.svelte" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/home/route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shortcodes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/svelte.config.js" beforeDir="false" />
+    <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="restored CVs">
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +39,7 @@
       <recent name="$PROJECT_DIR$/assets/img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/src/routes/home" />
     </key>
@@ -101,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608990733954</updated>
-      <workItem from="1608990737255" duration="3253000" />
+      <workItem from="1608990737255" duration="6544000" />
     </task>
     <task id="LOCAL-00001" summary="elder.js start version">
       <created>1609139440651</created>
@@ -110,7 +78,35 @@
       <option name="project" value="LOCAL" />
       <updated>1609139440651</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fully static version">
+      <created>1609139660404</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609139660404</updated>
+    </task>
+    <task id="LOCAL-00003" summary="CV on english">
+      <created>1609139939691</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609139939691</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gitignore">
+      <created>1609139978020</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609139978020</updated>
+    </task>
+    <task id="LOCAL-00005" summary="restored CVs">
+      <created>1609141258748</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609141258748</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +115,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -126,9 +147,18 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="elder.js start version" />
-    <option name="LAST_COMMIT_MESSAGE" value="elder.js start version" />
+    <MESSAGE value="Fully static version" />
+    <MESSAGE value="CV on english" />
+    <MESSAGE value="gitignore" />
+    <MESSAGE value="restored CVs" />
+    <option name="LAST_COMMIT_MESSAGE" value="restored CVs" />
   </component>
 </project>
