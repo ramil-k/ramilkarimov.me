@@ -49,10 +49,11 @@
     </div>
   </div>
   <div class="experience"></div>
+  <script src="node_modules/marked/marked.min.js"></script>
   <script>
     fetch('./cv.ru.md')
             .then(res => res.text())
-            .then(text => document.querySelector('.experience').innerHTML = text);
+            .then(text => document.querySelector('.experience').innerHTML = marked(text));
   </script>
 </div>
 

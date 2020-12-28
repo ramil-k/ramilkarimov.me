@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="Some fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv.ru.md" beforeDir="false" afterPath="$PROJECT_DIR$/cv.ru.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608990733954</updated>
       <workItem from="1608990737255" duration="9786000" />
-      <workItem from="1609161057679" duration="361000" />
+      <workItem from="1609161057679" duration="2685000" />
     </task>
     <task id="LOCAL-00001" summary="elder.js start version">
       <created>1609139440651</created>
@@ -141,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609145491327</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="max-width">
+      <created>1609161462255</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609161462255</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,6 +208,7 @@
     <MESSAGE value="restored CVs" />
     <MESSAGE value="Added starting" />
     <MESSAGE value="Some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some fixes" />
+    <MESSAGE value="max-width" />
+    <option name="LAST_COMMIT_MESSAGE" value="max-width" />
   </component>
 </project>

@@ -43,7 +43,7 @@ body {
 }
 .experience {
     grid-area: experience;
-    white-space: pre-wrap;
+    /*white-space: pre-wrap;*/
 }
 .education-card {
     /* TODO reimplement this block*/
