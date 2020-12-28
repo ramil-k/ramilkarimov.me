@@ -2,7 +2,6 @@
   "name": "ramilkarimov.me",
   "version": "0.0.1",
   "description": "",
-  "main": "./serve.js",
   "scripts": {
     "start": "http-server . -p 80"
   },
