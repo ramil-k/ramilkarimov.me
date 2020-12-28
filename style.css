@@ -1,4 +1,10 @@
+body {
+    display: grid;
+    place-items: center;
+}
+
 .cv-ru {
+    max-width: 1000px;
     display: grid;
     grid-template-columns: min-content 1fr 1fr;
     grid-template-rows: min-content min-content auto;
