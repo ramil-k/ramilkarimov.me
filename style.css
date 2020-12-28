@@ -18,6 +18,20 @@ body {
     grid-gap: 1rem;
 }
 
+@media screen and (max-width: 768px) {
+    .cv-ru {
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content;
+        grid-template-areas:
+            "photo"
+            "name"
+            "summary"
+            "educationhobby"
+            "hobby"
+            "experience";
+        grid-gap: 1rem;
+    }
+}
 .main-photo {
     grid-area: photo;
     place-self: center;
