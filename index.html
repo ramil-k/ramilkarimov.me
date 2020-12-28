@@ -10,5 +10,50 @@
 </head>
 <body>
 
+<div class="cv-ru">
+  <img class="main-photo" src="/img/avatar2.jpeg" width="768" height="1024" alt="Рамиль">
+  <div class="title">
+    <h1>Рамиль Каримов</h1>
+    <h2>Программист, студент</h2>
+  </div>
+
+  <article class="summary">
+    Я много работал как разработчик, а сейчас учусь в бюро чтобы перенять их подход к работе и начать развиваться в новой профессии.
+  </article>
+
+  <table class="education">
+    <tr>
+      <td class="education-card__title" colspan="2">Удмуртский Государственный Университет</td>
+    </tr>
+    <tr class="education-card">
+      <td class="education-card__dates">2005&nbsp;—&nbsp;2010</td>
+      <td class="education-card__subtitle">Факультет информационных технологий и вычислительной&nbsp;техники</td>
+    </tr>
+    <tr>
+      <td class="education-card__title" colspan="2">Школа дизайнеров бюро Артёма Горбунова</td>
+    </tr>
+    <tr class="education-card">
+      <td class="education-card__dates">2020&nbsp;—&nbsp;2021</td>
+      <td class="education-card__subtitle">13 поток</td>
+    </tr>
+  </table>
+  <div class="hobby">
+    <div class="hobby-card">
+      <img src="/img/drums.svg" alt="Иконка барабана">
+      <div>Играю на барабанах</div>
+    </div>
+    <div class="hobby-card">
+      <img src="/img/dragon.svg" alt="Иконка дракона">
+      <div>Играю в Dungeons and Dragons</div>
+    </div>
+  </div>
+  <div class="experience"></div>
+  <script>
+    fetch('./cv.ru.md')
+            .then(res => res.text())
+            .then(text => document.querySelector('.experience').innerHTML = text);
+  </script>
+</div>
+
 </body>
 </html>
