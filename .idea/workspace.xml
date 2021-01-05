@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="Some fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/dragon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/dragon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/drums.svg" beforeDir="false" afterPath="$PROJECT_DIR$/img/drums.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1608990733954</updated>
       <workItem from="1608990737255" duration="9786000" />
-      <workItem from="1609161057679" duration="3310000" />
+      <workItem from="1609161057679" duration="4923000" />
+      <workItem from="1609834536491" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="elder.js start version">
       <created>1609139440651</created>
@@ -155,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609170915640</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some fixes">
+      <created>1609171604462</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609171604462</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
