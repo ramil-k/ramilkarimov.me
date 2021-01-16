@@ -6,7 +6,7 @@ body {
 .cv-ru {
     max-width: 1000px;
     display: grid;
-    grid-template-columns: min-content 1fr 1fr;
+    grid-template-columns: minmax(min-content, 1fr) 1fr 1fr;
     grid-template-rows: min-content min-content auto;
     grid-template-areas:
             "photo      name        name"
@@ -35,8 +35,12 @@ body {
 .main-photo {
     grid-area: photo;
     place-self: center;
-
     overflow: hidden;
+}
+.main-photo img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: fill;
 }
 .title {
     grid-area: name;
