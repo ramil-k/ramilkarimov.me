@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="icons layout">
-      <change afterPath="$PROJECT_DIR$/img/portfolio/ggpd.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/maxiru.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/octopus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/orion.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/portfolio/parts-form.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio.html" afterDir="false" />
+    <list default="true" id="ca2cbad6-02d2-4077-b190-b29187151425" name="Default Changelist" comment="portfolio">
+      <change beforePath="$PROJECT_DIR$/.idea/ramilkarimov.me.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ramilkarimov.me.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,13 +41,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Markdown" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTML&#10;Markdown" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -70,7 +62,13 @@
       <recent name="$PROJECT_DIR$/src/routes/home" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Makefile.deploy">
+    <configuration name="deploy" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="deploy" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -83,6 +81,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile.deploy" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -99,7 +98,13 @@
       <workItem from="1609161057679" duration="4923000" />
       <workItem from="1609834536491" duration="13258000" />
       <workItem from="1610625715293" duration="98000" />
-      <workItem from="1610786419729" duration="9319000" />
+      <workItem from="1610786419729" duration="10492000" />
+      <workItem from="1611311852342" duration="686000" />
+      <workItem from="1612017829649" duration="558000" />
+      <workItem from="1612785328588" duration="1344000" />
+      <workItem from="1613131754351" duration="3000" />
+      <workItem from="1613131770379" duration="2849000" />
+      <workItem from="1614236052216" duration="1107000" />
     </task>
     <task id="LOCAL-00001" summary="elder.js start version">
       <created>1609139440651</created>
@@ -199,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609835229710</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="portfolio">
+      <created>1610800249558</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1610800249558</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added akai pro">
+      <created>1612785532716</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1612785532716</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +276,8 @@
     <MESSAGE value="max-width" />
     <MESSAGE value="Some fixes" />
     <MESSAGE value="icons layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="icons layout" />
+    <MESSAGE value="portfolio" />
+    <MESSAGE value="Added akai pro" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added akai pro" />
   </component>
 </project>
