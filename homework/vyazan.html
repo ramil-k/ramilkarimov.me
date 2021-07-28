@@ -3,254 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Вязань</title>
-  <style type="text/css">
-    html {
-      font-size: 10px;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: start;
-      font-family: 'Helvetica Neue';
-      font-size: 1.6rem;
-    }
-    article {
-      width: 824px;
-    }
-    .header {
-      width: 824px;
-      display: grid;
-      grid-template-areas:   "title menu search";
-      grid-template-columns:  1fr   3fr  2fr    ;
-      align-items: baseline;
-      grid-column-gap: 10px;
-      padding-top: 10px;
-      padding-bottom: 7px;
-      /*line-height: 49px;*/
-    }
-    
-    .header .title {
-      position: relative;
-      line-height: 4.8rem;
-      font-size: 4.0rem;
-      font-style: italic;
-    }
-    .header .title .logo {
-      position: absolute;
-      left: -6.6rem;
-    }
-
-    .header .menu {
-      list-style: none;
-      display: flex;
-      padding-left: 2.1rem;
-    }
-    .header .menu li {
-      font-size: 1.8rem;
-      line-height: 2.1rem;
-      text-align: center;
-      letter-spacing: 0.055em;
-      margin-right: 1.6rem;
-    }
-
-    .header .searchbar-wrapper {
-      border: solid;
-      border-color: rgba(130, 125, 157, 0.7);
-      border-radius: 1.5rem;
-      border-width: 0.6px;
-      position: relative;
-      padding-left: 2.6rem;
-    }
-    .header .searchbar-wrapper:before {
-      opacity: 0.7;
-      z-index:-1;
-      position:absolute;
-      left:-0.1rem;
-      top:0.1rem;
-      content: url("./images/magnifier.svg");
-    }
-    .header .searchbar {
-      width: 100%;
-      height: 2.6rem;
-      border-width: 0;
-      border-radius: 1.5rem;
-      font-size: 1.8rem;
-      line-height: 2.1rem;
-      padding-top: 0.3rem;
-    }
-    .header .searchbar:placeholder {
-      background: -webkit-linear-gradient(rgba(44, 39, 78, 0.6), rgba(130, 125, 157, 0.6));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .header .searchbar:not(:placeholder-shown) {
-      background: -webkit-linear-gradient(rgba(44, 39, 78, 1), rgba(130, 125, 157, 1));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h1, h2, .title, .header .menu li, .author-name {
-      background: -webkit-linear-gradient(rgba(44, 39, 78, 1), rgba(130, 125, 157, 1));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    h1 {
-      font-size: 6.4rem;
-      margin-top: 0rem;
-      margin-bottom: 1.5rem;
-      font-weight: normal;
-    }
-    h2 {
-      font-size: 2.8rem;
-      line-height: 106%;
-      margin-bottom: 0;
-      padding-bottom: 0.7rem;
-      font-weight: normal;
-    }
-    p {
-      margin: 0;
-      margin-bottom: 0.6rem;
-    }
-    section {
-      width: 824px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: min-content;
-      grid-gap: 1rem;
-    }
-    section h2 {
-      grid-column-start:  span 3;
-    }
-    section .section-text {
-      grid-column-start:  span 2;
-    }
-    section .reference {
-      grid-column-start:  span 1;
-
-      font-family: Times;
-      font-size: 1.4rem;
-      line-height: 100%;
-
-      color: #878787;
-    }
-    section .reference .reference-title {
-      margin-bottom: 0.5rem;
-    }
-    section .reference .reference-authors {
-      font-size: 9px;
-      line-height: 10px;
-    }
-    section .lead {
-      grid-column-start: span 3;
-      font-weight: 500;
-      font-size: 1.8rem;
-      line-height: 2.2rem;
-      padding: 0 6.9rem 1rem 6.9rem;
-    }
-    .intro {
-      width: 824px;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-areas: 
-        "section-text authors";
-      grid-column-gap: 10px;
-    }
-    .intro .section-text {
-      grid-area: section-text;
-    }
-    .intro .authors {
-      grid-area: authors;
-      display: flex;
-      flex-direction: column;
-    }
-    .intro .authors .author {
-      margin-bottom: 1.5rem;
-      display: flex;
-    }
-    .intro .authors .author .author-details {
-      margin-left: 5px;
-    }
-    .intro .authors .author .author-name {
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 2rem;
-    }
-    .intro .authors .author .author-details {
-      color: #444444;
-      line-height: 100%;
-      font-size: 1.2rem;
-      font-weight: 300;
-    }
-    .scheme {
-      width: 824px;
-      display: grid;
-      grid-template-columns: 129px 129px 129px 129px 129px 129px;
-      grid-column-gap: 10px;
-      --callout-start: 4;
-      --callout-top: 0;
-    }
-    .scheme h2 {
-      grid-column-start: 1;
-      grid-column-end: end;
-    }
-    .scheme .scheme-image {
-      grid-row-start: 2;
-      grid-column-start: 1;
-      grid-column-end: 4;
-    }
-    .scheme .callout {
-      grid-row-start: 2;
-      grid-column-start: var(--callout-start);
-      margin-top: var(--callout-top);
-      grid-column-end: span 3;
-      position: relative;
-    }
-    .scheme .callout .callout-line {
-      position: absolute;
-      right: calc(100% + 1rem);
-      top: 1rem;
-    }
-    .scheme .callout-shifted-forward {
-      --callout-start: 3;
-    }
-    .quality {
-      align-items: center;
-    }
-    .extra-links {
-      grid-row-gap: 0;
-    }
-    .extra-links,
-    .extra-links a {
-      color: rgba(66, 137, 176, 1);
-    }
-    .extra-links a:hover {
-      color: rgba(26, 87, 136, 1);
-    }
-    .extra-links ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      padding-left: 2.8rem;
-      grid-column-start: span 3;
-    }
-    .extra-links ul li {
-      line-height: 2.2rem;
-      font-size: 1.8rem;
-      margin-bottom: 0.6rem;
-    }
-    .footer {
-      display: flex;
-      width: 824px;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.8rem;
-      margin-top: 4rem;
-    }
-    .footer-author {
-      text-align: right;
-    }
-  </style>
+  <link rel="icon" href="./images/logo.svg">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div class="header">
@@ -258,15 +12,14 @@
       <img src="./images/logo.svg" alt="Вязань" class="logo">
       Вязань
     </div>
-    <ul class="menu">
-      <li><a href="#">Каталог</a></li>
-      <li><a href="#">Статьи</a></li>
-      <li><a href="#">О нас</a></li>
-    </ul>
+    <nav class="menu">
+      <a href="#">Каталог</a>
+      <a href="#">Статьи</a>
+      <a href="#">О нас</a>
+    </nav>
     <div class="searchbar-wrapper">
       <input class="searchbar" type="search" placeholder="Поиск" />
     </div>
-    <div class="rest"></div>
   </div>
   <article>
     <h1>Шерсть и здоровье</h1>
@@ -280,10 +33,8 @@
         </p>
       </div>
       <div class="authors">
-        <div class="author">
-          <div class="author-avatar">
-            <img src="./images/ramil.png" alt="Рамиль Каримов" width="48"  height="48">
-          </div>
+        <div class="author">        
+          <img  class="author-avatar" src="./images/ramil.png" alt="Рамиль Каримов" width="48"  height="48">
           <div class="author-details">
             <div class="author-name">Рамиль Каримов</div>
             <div class="author-position">Редактор</div>
@@ -291,9 +42,7 @@
           </div>
         </div>
         <div class="author">
-          <div class="author-avatar">
-            <img src="./images/rustam.png" alt="Рустам Ахметгалеев">
-          </div>
+          <img class="author-avatar" src="./images/rustam.png" alt="Рустам Ахметгалеев" width="48"  height="48">
           <div class="author-details">
             <div class="author-name">Рустам Ахметгалеев</div>
             <div class="author-position">Глава лаборатории при ООО «Вязань»</div>
@@ -304,73 +53,33 @@
     </section>
     <section class="scheme">
       <h2>Погружение в волокно</h2>
-      <div class="scheme-image">
-        <img src="./images/scheme.png" alt="Схема волокна шерсти" width="409" height="1065" style="object-fit: cover;">
+        <img class="scheme-image" src="./images/scheme.png" alt="Схема волокна шерсти" width="411" height="1049" style="object-fit: cover;">
+      <div class="callout" style="--callout-top: 20px;">
+        <strong>Альфа-спираль</strong>, спиральный аминокислотный белок. Обеспечивает в шерсти хорошую прочность благодаря своей цельной молекулярной структуре.
       </div>
-      <div class="callout" style="--callout-top: 2rem;">
-        <div class="callout-line" style="top: -0.2rem;">
-          <svg width="253" height="2" viewBox="0 0 253 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0.999156" y1="1.62119" x2="252.999" y2="0.770601" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Альфа-спираль</strong>, спиральный аминокислотный белок. Обеспечивает в шерсти хорошую прочность благодаря своей цельной молекулярной структуре.</div>
+      <div class="callout callout-shifted-forward"  style="--callout-top: 121.1px;">
+        <strong>Протофибриллы</strong>, закрученные в спираль белки. Придают шерсти гибкость и стойкость.
       </div>
-      <div class="callout callout-shifted-forward"  style="--callout-top: 11rem;">
-        <div class="callout-line" style="top: -0.3rem;">
-          <svg width="68" height="1" viewBox="0 0 68 1" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="67.0064" y1="0.466553" x2="0.990387" y2="0.466553" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Протофибриллы</strong>, закрученные в спираль белки. Придают шерсти гибкость и стойкость.</div>
+      <div class="callout" style="--callout-top: 270px;">
+        <strong>Микрофибриллы</strong>, блоки протофиламентов.
       </div>
-      <div class="callout" style="--callout-top: 26rem;">
-        <div class="callout-line" style="top: -0.2rem;">
-          <svg width="173" height="2" viewBox="0 0 173 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="173" y1="1.12119" x2="0.996813" y2="0.845367" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Микрофибриллы</strong>, блоки протофиламентов.</div>
+      <div class="callout callout-shifted-forward" style="--callout-top: 342px;">
+        <strong>Матрица</strong>, межклеточный слой. Помогает в поглощении влаги и делает шерсть огнестойкой.
       </div>
-      <div class="callout callout-shifted-forward" style="--callout-top: 34.5rem;">
-        <div class="callout-line"  style="top: -0.3rem;">
-          <svg width="41" height="2" viewBox="0 0 41 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M41 0.871216L2.89146e-05 0.871216" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Матрица</strong>, межклеточный слой. Помогает в поглощении влаги и делает шерсть огнестойкой.</div>
+      <div class="callout" style="--callout-top: 410px;">
+        <strong>Макрофибриллы</strong>, блоки, в которые сгрупированы микрофиламенты.
       </div>
-      <div class="callout" style="--callout-top: 41rem;">
-        <div class="callout-line" style="top: -0.2rem;">
-          <svg width="134" height="2" viewBox="0 0 134 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="134" y1="1.19586" x2="-0.000183105" y2="1.19586" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Макрофибриллы</strong>, блоки, в которые сгрупированы микрофиламенты.</div>
+      <div class="callout" style="--callout-top: 620px;">
+        <strong>Эпикутикула</strong>, главная внешняя оболочка. Отталкивает воду благодаря содержанию воска в самой эпикутикуле. Впитывает воду с поверхности тела благодаря пористой структуре, благодаря этому вещь дольше ощущается сухой.
       </div>
-      <div class="callout" style="--callout-top: 62rem;">
-        <div class="callout-line">
-          <svg width="70" height="65" viewBox="0 0 70 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0.830181" y1="64.7031" x2="69.8302" y2="0.83716" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Эпикутикула</strong>, главная внешняя оболочка. Отталкивает воду благодаря содержанию воска в самой эпикутикуле. Впитывает воду с поверхности тела благодаря пористой структуре, благодаря этому вещь дольше ощущается сухой.</div>
+      <div class="callout" style="--callout-top: 780px;">
+        <strong>Кора</strong>, содержит Орто- и Пара-клетки. В качественной шерсти они хорошо выделены, благодаря этому лучше впитывают влагу. Содержит слой жира и воска, который хорошо поддается краске.
       </div>
-      <div class="callout" style="--callout-top: 78rem;">
-        <div class="callout-line">
-          <svg width="122" height="29" viewBox="0 0 122 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1.00006 27.8712L121 1.02063" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Кора</strong>, содержит Орто- и Пара-клетки. В качественной шерсти они хорошо выделены, благодаря этому лучше впитывают влагу. Содержит слой жира и воска, который хорошо поддается краске.</div>
+      <div class="callout" style="--callout-top: 918px;">
+        <strong>Кутикула</strong>, Кератиновый внешний слой. Чем чаще чешуйки, тем качественнее шерсть и тем лучше она сохраняет тепло.
       </div>
-      <div class="callout" style="--callout-top: 92.5rem;">
-        <div class="callout-line"  style="top: -0.2rem;">
-          <svg width="108" height="2" viewBox="0 0 108 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 1.02063L108 1.02063" stroke="black" stroke-opacity="0.75" stroke-width="0.5"/>
-          </svg>
-        </div>
-        <div class="callout-title"><strong>Кутикула</strong>, Кератиновый внешний слой. Чем чаще чешуйки, тем качественнее шерсть и тем лучше она сохраняет тепло.
-Кератин — прочный, водонепроницаемый материал, который можно найти в волосах, ногтях и коже.</div>
+      <div class="callout" style="--callout-top: 982px;">
+          Кератин — прочный, водонепроницаемый материал, который можно найти в волосах, ногтях и коже.
       </div>
     </section>
     <section class="quality">
@@ -387,36 +96,35 @@
           Сама шерсть не является аллергеном, это следует из исследования, проведенного объединенными усилиями ученых 9 разных университетов. 
         </p>
         <p>
-          В необработаной овечьей шерсти встречается ланолин, который может вызывать аллергию. Однако, согласно тому же исследованию, современная обработка шерсти не оставляет в ней ланолина в тех количествах, которые могут вызвать аллергию. Нарушение этого процесса может привести к аллергической реакции и раздражению у людей, склонных к аллергиям.
+          В необработаной овечьей шерсти встречается ланолин, который может вызывать аллергию. Однако, согласно тому же исследованию, современная обработка шерсти не оставляет в ней ланолина в тех количествах, которые могут вызвать аллергию. Нарушение этого процесса может привести к аллергической реакции и раздражению у людей, склонных к аллергиям.
         </p>
       </div>
       <div class="reference">
-        <div class="reference-title">
+        <cite class="reference-title">
           Debunking the Myth of Wool Allergy: Reviewing the Evidence for Immune and Non&#8209;immune Cutaneous Reactions.
-        </div>
-        <div class="reference-authors">
-          ZALLMANN, Michaela; SMITH, Pete K.; TANG, Mimi L. K.; SPELMAN, Lynda J.; CAHILL, Jennifer L.; WORTMANN, Gabriele; KATELARIS, Constance H.; ALLEN, Katrina J.; SU, John C. Acta Dermato-Venereologica. Sep2017, Vol. 97 Issue 8, p906-915. 10p.
-        </div>
+        </cite>
+        <small class="reference-authors">
+          ZALLMANN, Michaela; SMITH, Pete K.; TANG, Mimi L. K.; SPELMAN, Lynda J.; CAHILL, Jennifer L.; WORTMANN, Gabriele; KATELARIS, Constance H.; ALLEN, Katrina J.; SU, John C. Acta Dermato-Venereologica. Sep2017, Vol. 97 Issue 8, p906-915. 10p.
+        </small>
       </div>
     </section>
     <section>
       <h2>Раздражение кожи</h2>
       <div class="section-text">
         <p>
-          Раздражение кожи от одежды в первую очередь связано с атопическим дерматитом (экземой). Ношение одежды из шерсти мериноса показало значительное улучшение состояния кожи и качества жизни у людей с этим заболеванием.
+          Раздражение кожи от одежды в первую очередь связано с атопическим дерматитом (экземой). Ношение одежды из шерсти мериноса показало значительное улучшение состояния кожи и качества жизни у людей с этим заболеванием.
         </p>
       </div>
       <div class="reference">
-        <div class="reference-title">
+        <cite class="reference-title">
           Effects of Merino Wool on Atopic Dermatitis Using Clinical, Quality of Life, and Physiological Outcome Measures
-        </div>
-        <div class="reference-authors">
-          Joseph F. Fowler, Jr, MD, FAAD,* Lynn M. Fowler, BSN, RN,† and Douglas Lorenz, PhD† Division of Dermatology, University of Louisville; and †DS Research Inc, Louisville, KY.
-        </div>
+        </cite>
+        <small class="reference-authors">
+          Joseph F. Fowler, Jr, MD, FAAD,* Lynn M. Fowler, BSN, RN,† and Douglas Lorenz, PhD† Division of Dermatology, University of Louisville; and †DS Research Inc, Louisville, KY.
+        </small>
       </div>
     </section>
-    <section class="collage"></section>
-    <section>
+    <section class="manufacturing">
       <h2>Производство</h2>
       <div class="lead">Работаем с проверенными фермерами из Новой Зеландии, получившими сертификат Woolmark и регулярно его подтверждающими.</div>
       <div class="section-text">
@@ -430,9 +138,9 @@
     <section class="extra-links">
         <h2>Читайте также</h2>
         <ul>
-          <li>—&puncsp;<a href="article-1.html">Как выбрать шерстяные вещи, которые подходят именно тебе</a></li>
-          <li>—&puncsp;<a href="article-2.html">Советы по уходу за шерстяными вещами</a></li>
-          <li>—&puncsp;<a href="article-3.html">С чем сочетается шерсть?</a></li>
+          <li><a href="article-1.html">Как выбрать шерстяные вещи, которые подходят именно тебе</a></li>
+          <li><a href="article-2.html">Советы по уходу за шерстяными вещами</a></li>
+          <li><a href="article-3.html">С чем сочетается шерсть?</a></li>
         </ul>
     </section>
   </article>
