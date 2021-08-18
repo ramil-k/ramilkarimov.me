@@ -1,18 +1,18 @@
 body {
     display: grid;
     place-items: center;
+    font-family: 'PT Sans';
 }
 
 .cv-ru {
     max-width: 1000px;
     display: grid;
     grid-template-columns: minmax(min-content, 1fr) 1fr 1fr;
-    grid-template-rows: min-content min-content auto;
+    grid-template-rows: min-content min-content min-content;
     grid-template-areas:
-            "photo      name        name"
-            "photo    summary     summary"
-            "photo    . ."
-            "education  education   hobby"
+            "name       name        photo"
+            "summary    summary     photo"
+            "education  education   photo"
             "experience experience  hobby"
             "experience experience .";
     grid-gap: 1rem;
