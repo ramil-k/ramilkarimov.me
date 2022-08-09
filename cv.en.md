@@ -3,32 +3,45 @@
 *   Over 10 years of IT experience
 *   Proficient both in front-end and back-end development
 *   Experienced in web development with focus on SPA
-*   Have coaching experience (courses about front-end technologies and integration testing)
 
 ## Skills
 
 **Languages:** JavaScript, Typescript
 
-**Technologies:** React, AngularJS, React, Selenium, Unit testing, Webpack, Jasmine, CSS
-
+**Technologies:** React, Angular, React, Selenium, Unit testing, Webpack, Jasmine, CSS, SCSS
 
 ## Contacts
 
-Phone: +7 (912) 852-09-81
+Phone: +7 (912) 852-09-81; +998 91-798-89-66
 
 Mail: [ramil1017@gmail.com](mailto:ramil1017@gmail.com)
 
 Skype: [ramil.k](skype:ramil.k)
+
 Telegram: [@ramilkos](https://t.me/ramilkos)
 
 ## Work Experience
 
 ### From Dec 2020 — Software Engineer, Orion Innovation, Izhevsk (Remote), Russia
-#### **Project:** ECommerce solution
-**Role:** Frontend developer
+#### **Project:** Internal UI library for the medical portals
+**Tasks and Accomplishments:**
+*   Added library-wide dependency monitoring
+*   Implemented and updated few components for a library
 
+**Role:** Frontend developer
+**Languages:** Typescript, SCSS
+**Tools:** Webpack, ES6, React, Material UI, npm
+
+#### **Project:** ECommerce solution
+**Tasks and Accomplishments:**
+*    Integrated the payment solution
+*    Participated in on-going feature development
+
+**Role:** Frontend developer
 **Languages:**  Javascript, CSS
-**Tools:** Webpack, ES6, React, Redux, Cypress, Jenkins, Docker, AirTable, Open API
+**Tools:** Webpack, ES6, React, Redux, Jenkins, Docker, Open API
+
+Left the project because of it having too much legacy and I wanted a role closer to the design process.
 
 ### May 2020 - Oct 2020 — Software Engineer, QuickBPM, Izhevsk (Remote), Russia
 #### **Project:** QuickBPM redesign. Business Process Management tool
@@ -41,15 +54,7 @@ Telegram: [@ramilkos](https://t.me/ramilkos)
 **Languages:** TypeScript, SCSS, JavaScript
 **Tools:** Angular, RxJs, MobX, Cordova, Electron
 
-### May 2020 - Jun 2020 — Software Engineer, IKITLab, Izhevsk (Remote), Russia
-
-#### **Project:** Information kiosk
-**Tasks and Accomplishments**:
-*   Added new screens and new functionality
-
-**Role:** Frontend developer
-**Languages:** Javascript, CSS
-**Tools:** Tomcat, angularJS
+Left company because I did not handle well my leading role and decided to get a role with no subordinates.
 
 ### Aug 2019 - Apr 2020 — Software engineer, Maxiru inc, Izhevsk (Remote), Russia
 #### **Project**: Guest app. Content-based react native + webview mobile application for guests on cruise ships
@@ -60,6 +65,8 @@ Telegram: [@ramilkos](https://t.me/ramilkos)
 
 **Languages:**  Javascript, CSS
 **Tools:** Webpack, ES6, React, Redux, Cypress, Jenkins, Docker, AirTable, Open API
+
+Due to COVID-19, cruise business was in trouble, so company reduced development team, including me. 
 
 ### Jan 2018 - Aug 2019 – Senior Software engineer, RedSys inc, Izhevsk (Remote), Russia
 #### **Project**: Geo-information dashboard. Domain-specific set of tools maps, tables, charts, etc. to support decision-making.
@@ -73,6 +80,8 @@ Telegram: [@ramilkos](https://t.me/ramilkos)
 **Languages:**  Javascript, Typescript, Java, CSS
 **Tools:** Webpack, ES6, Angular, Golden Layout, Open Layers, w2ui, CSS, LESS, React, redux
 
+Company got bankrupt.
+
 ### May 2017 - Dec 2017 – Software engineer, Competentum, Izhevsk, Russia
 **Role:** Frontend developer
 **Tasks and Accomplishments**:
@@ -81,6 +90,8 @@ Telegram: [@ramilkos](https://t.me/ramilkos)
 
 **Languages:**  Javascript, Java
 **Tools:** Gulp, Webpack, ES6, Angular, Accessibility testing tools, Flash to html5 conversion tools
+
+Left so I can work remotely.
 
 ### Nov 2015 - Mar 2017 – Senior Software engineer, EPAM Systems, Irvine, CA, USA
 #### **Project**: Advertiser Experience Platform. Analytics, decision-making platform for recommendations to enhance AdWords campaigns.
