@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-Bold.woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-Regular.woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-Light.woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-BoldItalic.woff");
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-Italic.woff");
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Bellota Text";
+  src: url("fonts/Bellota_Text/BellotaText-LightItalic.woff");
+  font-weight: 300;
+  font-style: italic;
+}
