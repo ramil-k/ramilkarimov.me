@@ -1,38 +1,44 @@
 ---
 import Card from "./Card.astro";
----
+import {getCollection} from 'astro:content';
 
+
+const portfolio =
+    await getCollection("portfolio").then(p => p.filter(({data}) => !data.draft).toSorted(({slug:slug1}, {slug:slug2}) => parseInt(slug2) - parseInt(slug1)));
+---
 <div class="py-5 flex flex-col gap-5">
-  <div
-    class="px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 grid-flow-dense"
-  >
-    <Card tags={["Web", "Astro", "Tailwind"]}>
-      <Fragment slot="name">This website</Fragment>
-    </Card>
-    <!--<Card>Notion template for personal project management</Card>-->
-    <!--<Card>Shopify theme tbd</Card>-->
-    <!--<Card >Ticket application tbd</Card>-->
-    <!--<Card >Something web3 tbd</Card>-->
-    <Card tags={["Web", "Design", "Svelte", "SvelteKit"]}>
-      <Fragment slot="name">Growave, generative design system</Fragment>
-    </Card>
-    <Card tags={["Web", "Shopify", "React", "Svelte"]}>
-      <Fragment slot="name">Growave, general</Fragment>
-    </Card>
-    <Card tags={["Design", "Mobile", "Web"]} featured>
-      <Fragment slot="name">Bureau</Fragment>
-    </Card>
-    <Card tags={["Web", "POS", "eShop", "React"]} featured>
-      <Fragment slot="name">Treez</Fragment>
-    </Card>
-    <Card tags={["Mobile", "Web", "React", "React Native"]}>
-      <Fragment slot="name">Maxiru</Fragment>
-    </Card>
-    <Card tags={["Angular", "Web", "Mobile", "Cordova"]}>
-      <Fragment slot="name">Elma 365</Fragment>
-    </Card>
-    <Card tags={["Web", "Angular", "Dashboard", "Design"]}>
-      <Fragment slot="name">GGPD</Fragment>
-    </Card>
-  </div>
+    <div class="
+        px-5
+        grid
+        grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-3
+        gap-5
+        grid-flow-dense"
+    >
+        {portfolio.map(({data, slug}) => (
+                <Card tags={data.tags} featured={data.featured}>
+                    <a class="card-clickable" slot="name" href=`/articles/${slug}`  >{data.title}</a>
+                </Card>
+        ))}
+        <!--<Card>Notion template for personal project management</Card>-->
+        <!--<Card>Shopify theme tbd</Card>-->
+        <!--<Card >Ticket application tbd</Card>-->
+        <!--<Card >Something web3 tbd</Card>-->
+
+    </div>
 </div>
+<style>
+    .card-clickable {
+        display: block;
+    }
+    .card-clickable:before {
+        position: absolute;
+        content: " ";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+    }
+</style>
