@@ -31,11 +31,6 @@ const hero = [
     ${alpha(vibrantColors.redVibrant2, 1)} 1%,
     ${alpha(vibrantColors.yellowVibrant, 1)} 15%,
     ${alpha(vibrantColors.yellowVibrant, 1)} 150%)`,
-  // css`radial-gradient(farthest-corner at 30% 45% in oklch,
-  //   ${alpha(colors.blue["900"], 1)},
-  //   ${alpha(colors.blue["800"], 1)} 10%,
-  //   ${alpha(colors.fuchsia["900"], 1)} 25%,
-  //   ${alpha(colors.fuchsia["950"], 1)} 150%)`,
 ].join(",");
 
 /** @type {import('tailwindcss').Config} */
@@ -46,7 +41,7 @@ export default {
     extend: {
       colors: vibrantColors,
       fontFamily: {
-        display: ["Bellota Text", ...fontFamily.sans],
+        display: ['"Bellota Text"', ...fontFamily.sans],
       },
       backgroundImage: {
         hero,
