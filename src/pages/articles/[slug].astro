@@ -20,7 +20,7 @@ export const getStaticPaths = async () => {
     <span class="text-center text-6xl w-full">WIP</span>
     <span class="text-center text-2xl w-3/4">Yes, this page is supposed to look like this.</span>
   </div>
-  <pre>{JSON.stringify(Astro.props.entry, null, 2)}</pre>
-  <pre>{JSON.stringify(Object.entries(content), null, 2)}</pre>
-  <content.Content />
+  <div class="prose lg:prose-xl lg:max-width-3/4 p-5 mx-auto prose-headings:mb-0">
+    <content.Content />
+  </div>
 </MainLayout>

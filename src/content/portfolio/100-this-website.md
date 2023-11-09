@@ -4,8 +4,8 @@ tags: [Web, Astro, Tailwind]
 draft: false
 featured: true
 ---
-# This is a dual-functionality website. It works as my portfolio and as a showcase for my skills.
-
+# ramilkarimov.me
+It works as my portfolio and as a showcase for my skills.
 ## Design
 Overall, I'm working on a responsive website with simple but bright design system.
 
