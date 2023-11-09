@@ -4,7 +4,11 @@ import {getCollection} from 'astro:content';
 
 
 const portfolio =
-    await getCollection("portfolio").then(p => p.filter(({data}) => !data.draft).toSorted(({slug:slug1}, {slug:slug2}) => parseInt(slug2) - parseInt(slug1)));
+    await getCollection("portfolio").then(p => {
+        p = p.filter(({data}) => !data.draft);
+        p.sort(({slug: slug1}, {slug: slug2}) => parseInt(slug2) - parseInt(slug1));
+        return p;
+    });
 ---
 <div class="py-5 flex flex-col gap-5">
     <div class="
