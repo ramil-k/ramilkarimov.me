@@ -1,6 +1,6 @@
 ---
 title: Notion template for personal project management
 tags: []
-draft: false
+draft: true
 featured: false
 ---

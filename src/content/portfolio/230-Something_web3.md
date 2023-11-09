@@ -1,6 +1,6 @@
 ---
 title: Something web3
 tags: []
-draft: false
+draft: true
 featured: false
 ---

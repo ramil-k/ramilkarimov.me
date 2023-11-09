@@ -1,6 +1,6 @@
 ---
 title: Shopify theme
 tags: []
-draft: false
+draft: true
 featured: false
 ---
