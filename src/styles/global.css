@@ -4,7 +4,11 @@
   text-wrap: balance;
 }
 a.text-link {
-  background-image: linear-gradient(to bottom, currentColor 0, currentColor 100%);
+  background-image: linear-gradient(
+    to bottom,
+    currentColor 0,
+    currentColor 100%
+  );
   background-position: 0 95%;
   background-repeat: repeat-x;
   background-size: 1px 0.5px;
