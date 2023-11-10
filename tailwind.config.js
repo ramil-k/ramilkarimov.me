@@ -16,10 +16,10 @@ let vibrantColors = {
 const hero = [
   css`radial-gradient(circle at 0% in oklch,
     ${colors.transparent},
-    ${alpha(vibrantColors.redVibrant, 0.3)}/*a*/ 65%,
-    ${alpha(vibrantColors.redVibrant, 0.5)}/*c*/ 80%,
-    ${alpha(vibrantColors.redVibrant, 0.5)}/*c*/ 90%,
-    ${alpha(vibrantColors.redVibrant, 0)}/*6*/ 90%,
+    ${alpha(vibrantColors.redVibrant, 0.3)} 65%,
+    ${alpha(vibrantColors.redVibrant, 0.5)} 80%,
+    ${alpha(vibrantColors.redVibrant, 0.5)} 90%,
+    ${alpha(vibrantColors.redVibrant, 0)} 90.2%,
     ${alpha(vibrantColors.redVibrant, 1)} 120%)`,
   css`radial-gradient(farthest-corner at 75% 65% in oklch,
     ${alpha(vibrantColors.blueVibrant, 1)},
@@ -47,7 +47,7 @@ export default {
         hero,
       },
       boxShadow: {
-        "inset-border": "inset 0px 0px 0px 3px var(--tw-shadow)",
+        "inset-border": "inset 0px 0px 0px 2px var(--tw-shadow)",
       },
     },
   },
