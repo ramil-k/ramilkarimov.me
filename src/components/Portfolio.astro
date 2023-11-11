@@ -22,7 +22,7 @@ const portfolio =
     >
         {portfolio.map(({data, slug}) => (
                 <Card tags={data.tags} featured={data.featured}>
-                    <a class="card-clickable" slot="name" href=`/articles/${slug}`>{data.title}</a>
+                    <a class="card-clickable min-w-min max-w-max" slot="name" href=`/articles/${slug}`>{data.title}</a>
                 </Card>
         ))}
     </div>
