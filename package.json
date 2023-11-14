@@ -7,7 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "lint:fix": "prettier --write . --plugin=prettier-plugin-astro",
+    "lint:fix": "prettier --write . --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
     "astro": "astro"
   },
   "dependencies": {
@@ -20,7 +20,9 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
+    "postcss-nesting": "^12.0.1",
     "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.1"
+    "prettier-plugin-astro": "^0.12.1",
+    "prettier-plugin-tailwindcss": "^0.5.7"
   }
 }

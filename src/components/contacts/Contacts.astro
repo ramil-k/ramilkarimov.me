@@ -6,36 +6,37 @@ import Telegram from "./telegram.svg?raw";
 
 <div
   id="contacts"
-  class="py-10
-    px-5
-    text-black
-    text-xl
-    sm:text-2xl
+  class="
     grid
+    grid-flow-row
     grid-cols-[minmax(64px,_max-content)_minmax(200px,_max-content)]
+    justify-center
+    bg-yellowVibrant
+    px-5
+    py-10
+    text-xl
+    text-black
+    sm:text-2xl
     md:py-[10vh]
     md:text-3xl
-    lg:grid-cols-[minmax(0,_max-content)_minmax(min-content,_max-content)_minmax(64px,_max-content)_minmax(200px,_max-content)]
-    grid-flow-row
-    bg-yellowVibrant
-    justify-center"
+    lg:grid-cols-[minmax(0,_max-content)_minmax(min-content,_max-content)_minmax(64px,_max-content)_minmax(200px,_max-content)]"
 >
   <label
     class="calendly
-        lg:row-span-2
         col-span-2
         grid
+        w-full
         grid-cols-2
         items-center
         gap-3
+        justify-self-end
         border-2
         border-black
-        w-full
-        lg:max-w-lg
         p-5
-        justify-self-end"
+        lg:row-span-2
+        lg:max-w-lg"
   >
-    <picture class="min-w-0 aspect-square">
+    <picture class="aspect-square min-w-0">
       <Fragment set:html={Calendar} />
     </picture>
     <span>
@@ -45,7 +46,9 @@ import Telegram from "./telegram.svg?raw";
       {" "}using&nbsp;Calendly
     </span>
   </label>
-  <label class="email w-full items-center gap-3 p-5 col-span-2 grid grid-cols-[subgrid]">
+  <label
+    class="email col-span-2 grid w-full grid-cols-[subgrid] items-center gap-3 p-5"
+  >
     <Fragment set:html={Email} />
     <span>
       Email:
@@ -54,7 +57,9 @@ import Telegram from "./telegram.svg?raw";
       >
     </span>
   </label>
-  <label class="telegram w-full items-center gap-3 p-5 col-span-2 grid  grid-cols-[subgrid]">
+  <label
+    class="telegram col-span-2 grid w-full grid-cols-[subgrid] items-center gap-3 p-5"
+  >
     <Fragment set:html={Telegram} />
     <span>
       Telegram:

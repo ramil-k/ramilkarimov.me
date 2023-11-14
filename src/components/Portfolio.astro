@@ -10,27 +10,27 @@ const portfolio =
         return p;
     });
 ---
-<div class="py-5 flex flex-col gap-5">
-    <div class="
-        px-5
+<div class="
+        p-5
         grid
         grid-cols-1
         md:grid-cols-2
         lg:grid-cols-3
         gap-5
         grid-flow-dense"
-    >
-        {portfolio.map(({data, slug}) => (
-                <Card tags={data.tags} featured={data.featured}>
-                    <a class="card-clickable min-w-min max-w-max" slot="name" href=`/articles/${slug}`>{data.title}</a>
-                </Card>
-        ))}
-    </div>
+>
+    {portfolio.map(({data, slug}) => (
+            <Card tags={data.tags} featured={data.featured}>
+                <a class="card-clickable min-w-min max-w-max" slot="name" href=`/articles/${slug}`>{data.title}</a>
+            </Card>
+    ))}
 </div>
+
 <style>
     .card-clickable {
         display: block;
     }
+
     .card-clickable:before {
         position: absolute;
         content: " ";

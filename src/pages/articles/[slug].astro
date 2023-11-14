@@ -16,12 +16,20 @@ export const getStaticPaths = async () => {
 ---
 
 <MainLayout>
-  <div class="w-full min-h-[50vh] bg-yellowVibrant flex flex-col place-items-center justify-center">
-    <span class="text-center text-6xl w-full">WIP</span>
-    <span class="text-center text-lg sm:text-2xl sm:w-3/4">Yes, this page is supposed to look like this.</span>
-    <span class="text-center text-lg sm:text-2xl sm:w-3/4 text-fuchsiaVibrant">And all articles are drafts for now.</span>
+  <div
+    class="flex min-h-[50vh] w-full flex-col place-items-center justify-center bg-yellowVibrant"
+  >
+    <span class="w-full text-center text-6xl">WIP</span>
+    <span class="text-center text-lg sm:w-3/4 sm:text-2xl">
+      Yes, this page is supposed to look like this.
+    </span>
+    <span class="text-center text-lg text-fuchsiaVibrant sm:w-3/4 sm:text-2xl">
+      And all articles are drafts for now.
+    </span>
   </div>
-  <div class="prose lg:prose-xl lg:max-width-3/4 p-5 mx-auto prose-headings:mb-0">
+  <div
+    class="lg:max-width-3/4 prose mx-auto p-5 lg:prose-xl prose-headings:mb-0"
+  >
     <content.Content />
   </div>
 </MainLayout>

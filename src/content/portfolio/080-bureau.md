@@ -1,7 +1,8 @@
 ---
 title: Gorbunov Bureau School of Design
-tags: ["Design", "Mobile", "Web"]
+tags: [Design, Mobile, Web]
 draft: false
 featured: true
 ---
+
 ...
