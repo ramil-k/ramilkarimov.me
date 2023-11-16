@@ -5,9 +5,7 @@ import { getCollection } from 'astro:content';
 const content = await Astro.props.entry.render();
 
 export const getStaticPaths = async () => {
-	const portfolio = await getCollection('portfolio').then((p) =>
-		p.filter(({ data }) => !data.draft)
-	);
+	const portfolio = await getCollection('portfolio').then((p) => p.filter(({ data }) => !data.draft));
 	return portfolio.map((entry) => ({
 		params: { slug: entry.slug },
 		props: { entry },
@@ -16,19 +14,15 @@ export const getStaticPaths = async () => {
 ---
 
 <MainLayout showHeader>
-	<div
-		class="flex min-h-[50vh] w-full flex-col place-items-center justify-center bg-yellowVibrant"
-	>
+	<div class="flex min-h-[50vh] w-full flex-col place-items-center justify-center bg-yellowVibrant">
 		<span class="w-full text-center text-6xl">WIP</span>
-		<span class="text-center text-lg sm:w-3/4 sm:text-2xl">
-			Yes, this page is supposed to look like this.
-		</span>
+		<span class="text-center text-lg sm:w-3/4 sm:text-2xl"> Yes, this page is supposed to look like this.</span>
 		<span class="text-center text-lg text-fuchsiaVibrant sm:w-3/4 sm:text-2xl">
 			And all articles are drafts for now.
 		</span>
 	</div>
 	<div
-		class="lg:max-width-3/4 prose mx-auto p-5 lg:prose-xl prose-headings:mb-0 prose-headings:mt-0.5 prose-li:my-0 prose-ul:my-0"
+		class="lg:max-width-3/4 prose mx-auto p-5 lg:prose-xl prose-headings:mb-0 prose-headings:mt-0.5 prose-ul:my-0 prose-li:my-0"
 	>
 		<content.Content />
 	</div>
