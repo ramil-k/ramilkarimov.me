@@ -1,14 +1,14 @@
 ---
-import Tag from "./Tag.astro";
+import Tag from './Tag.astro';
 interface Props {
-  featured?: boolean;
-  tags?: string[];
+	featured?: boolean;
+	tags?: string[];
 }
 const { featured, tags = [] }: Props = Astro.props;
 ---
 
 <div
-  class=`
+	class=`
     card
     relative
     px-5 py-2.5 
@@ -17,13 +17,16 @@ const { featured, tags = [] }: Props = Astro.props;
     backdrop-blur-2xl
     ${featured ? "md:col-span-2" : ""}
     hover:shadow-2xl
-`
+    animate-fade-up
+    animate-duration-1000
+    animate-once
+  `
 >
-  <h3 class="max-w-10/12 min-w-min text-2xl">
-    <slot name="name" />
-  </h3>
-  <slot />
-  <div class="flex flex-wrap gap-2.5">
-    {tags.map((t) => <Tag>{t}</Tag>)}
-  </div>
+	<h3 class="max-w-10/12 min-w-min text-2xl">
+		<slot name="name" />
+	</h3>
+	<slot />
+	<div class="flex flex-wrap gap-2.5">
+		{tags.map((t) => <Tag>{t}</Tag>)}
+	</div>
 </div>
