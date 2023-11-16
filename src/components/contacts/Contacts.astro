@@ -1,68 +1,59 @@
 ---
-import Calendar from "./calendar.svg?raw";
-import Email from "./email.svg?raw";
-import Telegram from "./telegram.svg?raw";
+import Calendar from './calendar.svg?raw';
+import Email from './email.svg?raw';
+import Telegram from './telegram.svg?raw';
 ---
 
 <div
-  id="contacts"
-  class="grid
-    grid-flow-row
-    grid-cols-[minmax(64px,_max-content)_minmax(200px,_max-content)]
-    justify-center
+	class="grid
+    w-full
+    gap-5
     bg-yellowVibrant
     px-5
     py-10
     text-xl
     text-black
     sm:text-2xl
-    md:py-[10vh]
     md:text-3xl
-    lg:grid-cols-[minmax(0,_max-content)_minmax(min-content,_max-content)_minmax(64px,_max-content)_minmax(200px,_max-content)]"
+    lg:grid-cols-2"
 >
-  <label
-    class="calendly
-        col-span-2
-        grid
-        w-full
-        grid-cols-2
-        items-center
-        gap-3
-        justify-self-end
-        border-2
-        border-black
-        p-5
-        lg:row-span-2
-        lg:max-w-lg"
-  >
-    <picture class="aspect-square min-w-0">
-      <Fragment set:html={Calendar} />
-    </picture>
-    <span>
-      <a class="text-link" href="https://calendly.com/ramilkarimov/30min"
-        >Schedule&nbsp;a&nbsp;call</a
-      >
-      {" "}using&nbsp;Calendly
-    </span>
-  </label>
-  <label
-    class="email col-span-2 grid w-full grid-cols-[subgrid] items-center gap-3 p-5"
-  >
-    <Fragment set:html={Email} />
-    <span>
-      Email:
-      <a class="text-link" href="mailto:ramilkarimov@hey.com"
-        >ramilkarimov@hey.com</a
-      >
-    </span>
-  </label>
-  <label
-    class="telegram col-span-2 grid w-full grid-cols-[subgrid] items-center gap-3 p-5"
-  >
-    <Fragment set:html={Telegram} />
-    <span>
-      Telegram:
-      <a class="text-link" href="https://t.me/ramilkos">@ramilkos</a>
-    </span>
-  </label>
+	<div
+		class="calendly
+      grid
+      grid-cols-[min-content,_min-content]
+      place-items-center
+      justify-start
+      border-2
+      border-black
+      pe-10
+      lg:justify-self-end"
+	>
+		<picture class="aspect-square w-32 lg:w-48 xl:w-64">
+			<Fragment set:html={Calendar} />
+		</picture>
+		<span class="">
+			<a class="text-link" href="https://calendly.com/ramilkarimov/30min">Schedule&nbsp;a&nbsp;call</a>
+			{' '}using&nbsp;Calendly
+		</span>
+	</div>
+	<div class="links grid grid-cols-[min-content,_auto] place-content-center justify-start gap-2.5">
+		<label class="col-span-2 grid grid-cols-[subgrid]">
+			<picture class="aspect-square w-16">
+				<Fragment set:html={Email} />
+			</picture>
+			<span class="self-center">
+				Email:
+				<a class="text-link" href="mailto:ramilkarimov@hey.com"> ramilkarimov@hey.com</a>
+			</span>
+		</label>
+		<label class="col-span-2 grid grid-cols-[subgrid]">
+			<picture class="aspect-square w-16">
+				<Fragment set:html={Telegram} />
+			</picture>
+			<span class="self-center">
+				Telegram:
+				<a class="text-link" href="https://t.me/ramilkos">@ramilkos</a>
+			</span>
+		</label>
+	</div>
 </div>
