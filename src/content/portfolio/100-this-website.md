@@ -31,6 +31,24 @@ I'm using Sergey Chikin's [365 icons pack](https://sergeychikin.ru/365/).
 
 ### Astro
 
+For the personal portfolio, I don't need React or Svelte, Next or Sveltekit. Astro helps me to build this static website, in the future, I'm planning to add interactivity using either Astro's mechanisms, or iframes to the other apps.
+
 ### Tailwind
 
+Tailwind works as a simple constructor, that allows to build and experiment on the website with high speed.
+
 ### Netlify
+
+For the personal website, the netlify's free instance is enough. It builds the website from the github repo.
+
+## Backlog
+
+- Finish articles
+- Add scroll animations
+  - Portfolio items appear on scroll
+  - Contacts blinks on opening
+  - Passing through animation for hero
+  - Hero to header transformation
+- Add a page with 3d work showcase
+- Small art for the footer
+- Setup prettier to format markdown
