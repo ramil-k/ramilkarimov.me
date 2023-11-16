@@ -23,14 +23,11 @@ const { showHeader } = Astro.props;
 		<Footer />
 
 		<script>
-			let body = document.querySelector('body');
-			let animated = body.querySelectorAll('[animated]');
+			let animated =  document.querySelectorAll('[animated]');
 			//
-			let cb = (entries) => {
-				// console.log("RK_", entries);
+			let opts = {};
+			let observer = new IntersectionObserver((entries) => {
 				for (let entry of entries) {
-					console.log('RK_', entry.intersectionRatio, entry);
-
 					if (entry.intersectionRatio > 0) {
 						entry.target.classList.add('active-animation');
 						entry.target.classList.remove('inactive-animation');
@@ -47,15 +44,13 @@ const { showHeader } = Astro.props;
 				//   //   // Remove 'active' class otherwise
 				//   //   entry.target.classList.remove("active");
 				//   // }
-			};
-			let opts = {};
-			let observer = new IntersectionObserver(cb, opts);
+			}, opts);
 
 			for (let a of animated) {
 				observer.observe(a);
 			}
 
-			console.log('RK_', body, animated, observer);
+			console.log('RK_', animated, observer);
 		</script>
 	</body>
 </html>
