@@ -1,24 +1,62 @@
 ---
-import Meta from "../components/Meta.astro";
-import Header from "../components/HeaderBlock.astro";
-import Footer from "../components/FooterBlock.astro";
-import "../styles/global.css";
+import Meta from '../components/Meta.astro';
+import Header from '../components/HeaderBlock.astro';
+import Footer from '../components/FooterBlock.astro';
+import '../styles/global.css';
+
+const { showHeader } = Astro.props;
 ---
 
 <html lang="en" class="h-full">
-  <head>
-    <Meta />
-    <title>Ramil Karimov, Front-end developer</title>
-  </head>
-  <body class="flex min-h-[100vh] flex-col font-display">
-    <!--<div class="max-w-[50rem] flex flex-col mx-auto w-full h-full"> -->
-    <Header />
+	<head>
+		<Meta />
+		<title>Ramil Karimov, Front-end developer</title>
+	</head>
+	<body class="flex min-h-[100vh] flex-col font-display">
+		{showHeader && <Header />}
 
-    <!-- ========== MAIN CONTENT ========== -->
-    <main id="content" role="main">
-      <slot />
-    </main>
-    <!-- ========== END MAIN CONTENT ========== -->
-    <Footer />
-  </body>
+		<!-- ========== MAIN CONTENT ========== -->
+		<main id="content" role="main">
+			<slot />
+		</main>
+		<!-- ========== END MAIN CONTENT ========== -->
+		<Footer />
+
+		<script>
+			let body = document.querySelector('body');
+			let animated = body.querySelectorAll('[animated]');
+			//
+			let cb = (entries) => {
+				// console.log("RK_", entries);
+				for (let entry of entries) {
+					console.log('RK_', entry.intersectionRatio, entry);
+
+					if (entry.intersectionRatio > 0) {
+						entry.target.classList.add('active-animation');
+						entry.target.classList.remove('inactive-animation');
+					} else {
+						entry.target.classList.remove('active-animation');
+						entry.target.classList.add('inactive-animation');
+					}
+				}
+				//
+				//   // if (entry.intersectionRatio > 0) {
+				//   //   // Add 'active' class if observation target is inside viewport
+				//   //   entry.target.classList.add("active");
+				//   // } else {
+				//   //   // Remove 'active' class otherwise
+				//   //   entry.target.classList.remove("active");
+				//   // }
+			};
+			let opts = {
+			};
+			let observer = new IntersectionObserver(cb, opts);
+
+			for (let a of animated) {
+				observer.observe(a);
+			}
+
+			console.log('RK_', body, animated, observer);
+		</script>
+	</body>
 </html>
