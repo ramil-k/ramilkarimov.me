@@ -1,32 +1,32 @@
-@import "./fonts.css";
+@import './fonts.css';
 
 @tailwind base;
 
 .balance {
-  text-wrap: balance;
+	text-wrap: balance;
 }
 
 @layer base {
-  :focus-visible {
-    @apply outline-2 outline-offset-2 outline-blueVibrant;
-  }
+	:focus-visible {
+		@apply outline-2 outline-offset-2 outline-blueVibrant;
+	}
 }
 
 a.text-link {
-  background-image: linear-gradient(
-    to bottom,
-    currentColor 0,
-    currentColor 100%
-  );
-  background-position: 0 95%;
-  background-repeat: repeat-x;
-  background-size: 1px 0.5px;
+	background-image: linear-gradient(
+		to bottom,
+		currentColor 0,
+		currentColor 100%
+	);
+	background-position: 0 1.2em;
+	background-repeat: repeat-x;
+	background-size: 1px 0.5px;
 }
 
 a.text-link {
-  &:hover,
-  &:focus-visible {
-    background-position: 0 100%;
-    background-size: 1px 4px;
-  }
+	&:hover,
+	&:focus-visible {
+		background-position: 0 100%;
+		background-size: 1px 0.3em;
+	}
 }
