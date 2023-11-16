@@ -1,6 +1,6 @@
 ---
-title: "Growave, general"
-tags: ["Web", "Shopify", "React", "Svelte"]
+title: Growave, general
+tags: [Web, Shopify, React, Svelte]
 draft: false
 ---
 

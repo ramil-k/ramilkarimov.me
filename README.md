@@ -1,7 +1,7 @@
 # Ramil Karimov, personal website.
 
-[//]: # "TODO add build instructions"
-[//]: # "TODO add tech stack info"
+[//]: # 'TODO add build instructions'
+[//]: # 'TODO add tech stack info'
 
 <!--
 ```sh

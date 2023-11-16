@@ -1,4 +1,33 @@
 ---
+/*
+Usage of colors:
+"red",
+"orange",
+"amber",
+"yellow",
+"lime",
+"green",
+"emerald",
+"teal",
+"cyan",
+"sky",
+"blue",
+"indigo",
+"violet",
+"purple",
+"fuchsia",
+"pink",
+"rose",
+"slate",
+"gray",
+"zinc",
+"neutral",
+"stone",
+"sand",
+"olive",
+"mauve",
+*/
+
 const bgs = {
 	Web: 'text-white bg-red-600',
 	Astro: 'text-white bg-purple-600',
@@ -12,11 +41,11 @@ const bgs = {
 	default: 'text-black bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-mauve-600 to-mauve-600',
 };
 
-const text = (await Astro.slots.render("default")) as keyof typeof bgs;
+const text = (await Astro.slots.render('default')) as keyof typeof bgs;
 
 const bg = bgs[text] || bgs.default;
 ---
 
 <div class=`px-1.5 text-2xl ${bg}`>
-  <slot />
+	<slot />
 </div>

@@ -1,6 +1,6 @@
 ---
 title: Growave, generative design system
-tags: ["Web", "Design", "Svelte", "SvelteKit"]
+tags: [Web, Design, Svelte, SvelteKit]
 draft: false
 ---
 
