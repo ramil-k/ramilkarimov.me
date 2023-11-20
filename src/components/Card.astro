@@ -20,9 +20,12 @@ const { featured, tags = [] }: Props = Astro.props;
     animate-fade-up
     animate-duration-1000
     animate-once
+    flex
+    flex-col
+    gap-1.5
   `
 >
-	<h3 class="max-w-10/12 min-w-min text-2xl">
+	<h3 class="max-w-10/12 balance min-w-min text-2xl">
 		<slot name="name" />
 	</h3>
 	<slot />

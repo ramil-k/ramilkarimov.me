@@ -34,11 +34,11 @@ const bgs = {
 	Tailwind: 'text-white bg-blue-600',
 	React: 'text-white bg-violet-600',
 	Svelte: 'text-white bg-orange-600',
-	Shopify: 'text-black  bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-teal-600 to-teal-600',
-	SvelteKit: 'text-black bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-orange-600 to-orange-600',
-	Mobile: 'text-black bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-pink-600 to-pink-600',
-	Design: 'text-black bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-fuchsia-600 to-fuchsia-600',
-	default: 'text-black bg-gradient-to-b bg-repeat-x bg-[0_0.9em] bg-[length:1px_100%] from-mauve-600 to-mauve-600',
+	Shopify: 'text-white bg-stone-500 shadow-inset-border shadow-teal-600',
+	SvelteKit: 'text-white bg-stone-500 shadow-inset-border shadow-orange-600',
+	Mobile: 'text-white bg-stone-500 shadow-inset-border shadow-pink-600',
+	Design: 'text-white bg-stone-500 shadow-inset-border shadow-fuchsia-600',
+	default: 'text-white bg-stone-500 shadow-inset-border shadow-mauve-600',
 };
 
 const text = (await Astro.slots.render('default')) as keyof typeof bgs;

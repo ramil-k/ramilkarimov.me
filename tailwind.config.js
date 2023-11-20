@@ -47,6 +47,9 @@ export default {
 			backgroundImage: {
 				hero,
 			},
+			boxShadow: {
+				'inset-border': 'inset -5px -5px 0px 6px var(--tw-shadow)',
+			},
 		},
 	},
 	plugins: [twAnimated, typography, nesting],
