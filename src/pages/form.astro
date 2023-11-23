@@ -40,7 +40,7 @@ import Meta from "../components/Meta.astro";
 		const viewport = window?.visualViewport;
 
 		function viewportHandler() {
-			const layoutViewport = document.querySelector("div");
+			const layoutViewport = document.querySelector("body");
 
 			// Since the bar is position: fixed we need to offset it by the visual
 			// viewport's offset from the layout viewport origin.
