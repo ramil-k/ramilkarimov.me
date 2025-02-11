@@ -21,7 +21,7 @@ import Telegram from './telegram.svg?raw';
 	<div
 		class="calendly
       grid
-      grid-cols-[min-content,_min-content]
+      grid-cols-[min-content__min-content]
       place-items-center
       justify-start
       border-2
@@ -37,8 +37,8 @@ import Telegram from './telegram.svg?raw';
 			{' '}using&nbsp;Calendly
 		</span>
 	</div>
-	<div class="links grid grid-cols-[min-content,_auto] place-content-center justify-start gap-2.5 px-5 lg:px-0">
-		<label class="col-span-2 grid grid-cols-[subgrid]">
+	<div class="links grid grid-cols-[min-content__auto] place-content-center justify-start gap-2.5 px-5 lg:px-0">
+		<label class="col-span-2 grid grid-cols-subgrid">
 			<picture class="aspect-square w-16">
 				<Fragment set:html={Email} />
 			</picture>
@@ -47,7 +47,7 @@ import Telegram from './telegram.svg?raw';
 				<a class="text-link" href="mailto:ramilkarimov@hey.com"> ramilkarimov@hey.com</a>
 			</span>
 		</label>
-		<label class="col-span-2 grid grid-cols-[subgrid]">
+		<label class="col-span-2 grid grid-cols-subgrid">
 			<picture class="aspect-square w-16">
 				<Fragment set:html={Telegram} />
 			</picture>
