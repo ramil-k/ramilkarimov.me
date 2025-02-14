@@ -7,10 +7,7 @@ featured: true
 
 # Cross-platform chat with an Electron application for windows and mac
 
-
-
 ## Design
-
 
 ## Technologies
 
@@ -31,12 +28,11 @@ but why?
 but why?
 
 ### Electron
+
 #### Electron-vite
+
 #### Electron-builder
 
 ## Team
 
 ## Results
-
-
-

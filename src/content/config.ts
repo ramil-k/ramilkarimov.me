@@ -11,6 +11,11 @@ const portfolio = defineCollection({
 	}),
 });
 
+const expirience = defineCollection({
+
+})
+
 export const collections = {
 	portfolio,
+	expirience
 };

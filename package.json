@@ -10,25 +10,21 @@
 		"lint:fix": "prettier --write . --plugin=prettier-plugin-astro --plugin=prettier-plugin-tailwindcss",
 		"astro": "astro"
 	},
-	"prettier": {
-		"trailingComma": "es5",
-		"singleQuote": true,
-		"useTabs": true
-	},
 	"dependencies": {
-		"@astrojs/check": "^0.2.1",
-		"@astrojs/tailwind": "^5.0.2",
-		"@evilmartians/harmony": "^1.1.0",
-		"astro": "^3.4.0",
-		"tailwindcss": "^4.0.0",
-		"tailwindcss-animated": "^1.0.1",
-		"typescript": "^5.2.2"
+		"@astrojs/check": "^0.9.4",
+		"@astrojs/tailwind": "^6.0.0",
+		"@evilmartians/harmony": "^1.4.0",
+		"@tailwindcss/vite": "^4.0.6",
+		"astro": "^5.2.5",
+		"astro-pdf": "^1.7.2",
+		"tailwindcss": "^4.0.6",
+		"tailwindcss-animated": "^2.0.0",
+		"typescript": "^5.7.3"
 	},
 	"devDependencies": {
-		"@tailwindcss/typography": "^0.5.10",
-		"postcss-nesting": "^12.0.1",
-		"prettier": "^3.0.3",
-		"prettier-plugin-astro": "^0.12.1",
+		"@tailwindcss/typography": "^0.5.16",
+		"prettier": "^3.5.0",
+		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-tailwindcss": "^0.6.11"
 	}
 }

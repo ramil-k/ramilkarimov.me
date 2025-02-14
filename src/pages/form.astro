@@ -1,67 +1,85 @@
 ---
-import Meta from "../components/Meta.astro";
+import Meta from '../components/Meta.astro';
 ---
+
 <html lang="en">
-<head>
-	<Meta/>
-	<title>Experimental feedback form</title>
-</head>
-<body>
-<div>
-	<h1 style="background: azure; position: fixed; top: 0; left: 0; right: 0;">Hidden experimental form</h1>
-	<p>Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long
-		text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
-		Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. </p>
-	<p>Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long
-		text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
-		Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. </p>
-	<p>Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long
-		text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
-		Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. </p>
-	<p>Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long
-		text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
-		Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. </p>
-	<p>Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long
-		text. Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
-		Really long text. Really long text. Really long text. Really long text. Really long text. Really long text. Really
-		long text. Really long text. Really long text. Really long text. Really long text. Really long text. </p>
-	<input style="background: azure; position: fixed; bottom: 0; left: 0; right: 0; transition: all 200ms ease-out;">
-	<script>
-		const bottomBar = document.querySelector("input");
-		const viewport = window?.visualViewport;
+	<head>
+		<Meta />
+		<title>Experimental feedback form</title>
+	</head>
+	<body>
+		<div>
+			<h1 style="background: azure; position: fixed; top: 0; left: 0; right: 0;">Hidden experimental form</h1>
+			<p>
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text.
+			</p>
+			<p>
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text.
+			</p>
+			<p>
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text.
+			</p>
+			<p>
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text.
+			</p>
+			<p>
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text. Really long text. Really long text. Really long text. Really long text. Really long text.
+				Really long text.
+			</p>
+			<input
+				style="background: azure; position: fixed; bottom: 0; left: 0; right: 0; transition: all 200ms ease-out;"
+			/>
+			<script>
+				const bottomBar = document.querySelector('input');
+				const viewport = window?.visualViewport;
 
-		function viewportHandler() {
-			const layoutViewport = document.querySelector("body");
+				function viewportHandler() {
+					const layoutViewport = document.querySelector('body');
 
-			// Since the bar is position: fixed we need to offset it by the visual
-			// viewport's offset from the layout viewport origin.
-			const offsetLeft = viewport?.offsetLeft ?? 0;
-			const offsetTop =
-				(viewport?.height ?? 0) -
-				(layoutViewport?.getBoundingClientRect()?.height ?? 0) +
-				(viewport?.offsetTop ?? 0);
+					// Since the bar is position: fixed we need to offset it by the visual
+					// viewport's offset from the layout viewport origin.
+					const offsetLeft = viewport?.offsetLeft ?? 0;
+					const offsetTop =
+						(viewport?.height ?? 0) -
+						(layoutViewport?.getBoundingClientRect()?.height ?? 0) +
+						(viewport?.offsetTop ?? 0);
 
-			// You could also do this by setting style.left and style.top if you
-			// use width: 100% instead.
-			if (bottomBar && bottomBar.style) {
-				bottomBar.style.transform = `translate(${offsetLeft}px, ${offsetTop}px) scale(${
-					1 / (viewport?.scale ?? 1)
-				})`;
-			}
-		}
+					// You could also do this by setting style.left and style.top if you
+					// use width: 100% instead.
+					if (bottomBar && bottomBar.style) {
+						bottomBar.style.transform = `translate(${offsetLeft}px, ${offsetTop}px) scale(${
+							1 / (viewport?.scale ?? 1)
+						})`;
+					}
+				}
 
-		window?.visualViewport?.addEventListener("scroll", viewportHandler);
-		window?.visualViewport?.addEventListener("resize", viewportHandler);
-	</script>
-</div>
-</body>
+				window.addEventListener('scroll', viewportHandler);
+				window.addEventListener('resize', viewportHandler);
+			</script>
+		</div>
+	</body>
 </html>
