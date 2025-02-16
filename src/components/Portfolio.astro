@@ -3,17 +3,20 @@ import Card from './Card.astro';
 import { getCollection } from 'astro:content';
 
 const portfolio = await getCollection('portfolio').then((p) => {
+	console.log({
+		p,
+	});
 	p = p.filter(({ data }) => !data.draft);
-	p.sort(({ slug: slug1 }, { slug: slug2 }) => parseInt(slug2) - parseInt(slug1));
+	p.sort(({ id: slug1 }, { id: slug2 }) => parseInt(slug2) - parseInt(slug1));
 	return p;
 });
 ---
 
 <div class="grid grid-flow-dense grid-cols-1 gap-5 px-5 pb-10 pt-5 md:grid-cols-2 lg:grid-cols-3">
 	{
-		portfolio.map(({ data, slug }) => (
+		portfolio.map(({ data, id }) => (
 			<Card tags={data.tags} featured={data.featured}>
-				<a class="card-clickable min-w-min max-w-max" slot="name" href={`/articles/${slug}`}>
+				<a class="card-clickable min-w-min max-w-max" slot="name" href={`/articles/${id}`}>
 					{data.title}
 				</a>
 			</Card>

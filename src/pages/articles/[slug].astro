@@ -1,13 +1,16 @@
 ---
 import MainLayout from '../../layout/Main.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
-const content = await Astro.props.entry.render();
+//getEntry('portfolio', Astro.props);
 
+const { Content } = await render(await Astro.props.entry);
+
+//
 export const getStaticPaths = async () => {
 	const portfolio = await getCollection('portfolio').then((p) => p.filter(({ data }) => !data.draft));
 	return portfolio.map((entry) => ({
-		params: { slug: entry.slug },
+		params: { slug: entry.id },
 		props: { entry },
 	}));
 };
@@ -24,6 +27,7 @@ export const getStaticPaths = async () => {
 	<div
 		class="lg:max-width-3/4 prose mx-auto p-5 lg:prose-xl prose-headings:mb-0 prose-headings:mt-0.5 prose-ul:my-0 prose-li:my-0"
 	>
-		<content.Content />
+		<!--{JSON.stringify(Object.keys(content))}-->
+		<Content />
 	</div>
 </MainLayout>
