@@ -6,7 +6,7 @@ import pdf from 'astro-pdf';
 
 // https://astro.build/config
 export default defineConfig({
-	integrations: [pdf({ pages: { cv: 'cv.pdf' } })],
+	integrations: [pdf({ pages: { cv: 'Ramil_Karimov.CV.pdf' } })],
 
 	vite: {
 		plugins: [tailwindcss()],

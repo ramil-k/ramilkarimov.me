@@ -3,7 +3,7 @@ title: Developer at Startup, Pyroblast, Remote
 start: '2023-10-01'
 end: '2024-03-01'
 ---
-### Project: Pyroblast
+#### Project: Pyroblast
 
 Gamer-oriented chat platform, got cancelled.
 

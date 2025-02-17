@@ -327,29 +327,23 @@
 		'Segoe UI Symbol', 'Noto Color Emoji';
 
 	--background-image-hero:
-		radial-gradient(
-			circle at 0% in oklch,
+		radial-gradient(circle at 0% in oklch,
 			transparent,
 			oklch(50% 0.185 20 / 0.3) 65%,
 			oklch(50% 0.185 20 / 0.5) 80%,
 			oklch(50% 0.185 20 / 0.5) 90%,
 			oklch(50% 0.185 20 / 0) 90.2%,
-			oklch(50% 0.185 20 / 1) 120%
-		),
-		radial-gradient(
-			farthest-corner at 75% 65% in oklch,
+			oklch(50% 0.185 20 / 1) 120%),
+		radial-gradient(farthest-corner at 75% 65% in oklch,
 			oklch(50.31% 0.25 280 / 1),
 			oklch(50.31% 0.25 280 / 0.8) 5%,
 			transparent 20%,
-			transparent
-		),
-		radial-gradient(
-			farthest-corner at 20% 35% in oklch,
+			transparent),
+		radial-gradient(farthest-corner at 20% 35% in oklch,
 			oklch(65% 0.27 20 / 1),
 			oklch(65% 0.27 20 / 1) 1%,
 			oklch(90% 0.17 100 / 1) 15%,
-			oklch(90% 0.17 100 / 1) 150%
-		);
+			oklch(90% 0.17 100 / 1) 150%);
 
 	--shadow-inset-border: inset -5px -5px 0px 6px var(--tw-shadow);
 }
@@ -363,6 +357,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
 	*,
 	::after,
 	::before,
@@ -372,11 +367,6 @@
 	}
 }
 
-@layer base {
-	.balance {
-		text-wrap: balance;
-	}
-}
 
 @layer base {
 	:focus-visible {
@@ -384,14 +374,14 @@
 	}
 }
 
-a.text-link {
+a.text-link,
+.prose a {
+	text-decoration: none;
 	background-image: linear-gradient(to bottom, currentColor 0, currentColor 100%);
 	background-position: 0 1.2em;
 	background-repeat: repeat-x;
 	background-size: 1px 0.5px;
-}
 
-a.text-link {
 	&:hover,
 	&:focus-visible {
 		background-position: 0 100%;
