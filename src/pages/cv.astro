@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import MainLayout from '../layout/Main.astro';
+import MainLayout from '#layout/Main.astro';
 
 const exp = await getCollection('experience').then((exp) => {
 	return Promise.all(exp.toSorted((a, b) => -a.data.start.localeCompare(b.data.start)).map((e) => render(e)));

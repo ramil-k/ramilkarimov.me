@@ -2,6 +2,9 @@
 	"name": "ramilkarimov.me",
 	"type": "module",
 	"version": "0.0.1",
+	"imports": {
+		"#*": "./src/*"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
