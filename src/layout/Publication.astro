@@ -1,8 +1,8 @@
 ---
-import Meta from '../components/Meta.astro';
-import Header from '../components/HeaderBlock.astro';
-import Footer from '../components/FooterBlock.astro';
-import '../styles/global.css';
+import Meta from '#components/Meta.astro';
+import Header from '#components/HeaderBlock.astro';
+import Footer from '#components/FooterBlock.astro';
+import '#styles/global.css';
 
 const { showHeader = true } = Astro.props;
 ---
@@ -17,7 +17,20 @@ const { showHeader = true } = Astro.props;
 
 		<!-- ========== MAIN CONTENT ========== -->
 		<main id="content" role="main">
-			<slot />
+			<div
+				class="lg:max-width-3/4
+			mx-auto
+			my-20
+			lg:prose-xl
+			prose
+			prose-headings:mb-0
+			prose-headings:mt-0.5
+			prose-ul:my-0
+			prose-li:my-0
+			prose-p:m-0"
+			>
+				<slot />
+			</div>
 		</main>
 		<!-- ========== END MAIN CONTENT ========== -->
 		<Footer />
