@@ -3,7 +3,7 @@ layout: '#layout/Publication.astro'
 ---
 # Тестовое задание One Vision.
 
-<details>
+<details class="my-3">
 <summary><b>Текст задания</b></summary>
 
 Компания “OneCar” предоставляет услуг по ремонту автомобилей. У них уже есть сайт где	можно зарегистрироваться, записаться на ремонт или обслуживание, отследить статус ремонта и полную смету.
@@ -83,9 +83,12 @@ type Message = {
   local_id: string, 
   // UUID выдается сервером при сохранении в БД
   external_id: string,
-  author: User,
+	status: 'draft' | 'sending' | 'sent' | 'received' | 'read'
+  author: User, 
   text: string,
   createdAt: Date,
+  // Меняется при смене статусов 
+	updatedAt: Date,
   attachments: Attachment[],
 }
 
@@ -100,7 +103,6 @@ type Chat = {
 
 
 ```ts
-// 
 class Database {
 	constructor() {}
 
@@ -110,24 +112,40 @@ class Database {
 	
 	async loadMessagesAfter(chat: Chat, date: Date) {}
 
+	searchMessages(chat: Chat, search: string, onLocalResult: Function, onRemoteResult: Function) {}
+
 	subscribeToMessages(chat: Chat, callback: Function) {}
 
 	createMessage(chat: Chat, message: Message) {}
+
+  // Sends a message to the WS, adds a sent message to the queue.
+	// Schedules a task to resend a message from the queue if there is no response in some time
+  #sendMessage() {}
+
+  // Called on message from the WS and handles all messages. If the message is a response, it contains the "requestId".
+	#onMessage() {}
+
+	// Sends ticks into ws to check if backend is healthy.
+	// Tries to reconnect if it's not.
+  #heartbeat() {}
+
+	// Creates WS connection and handles reconnects
+	#connect() {}
+
+  // Closes WS connection
+	#disconnect() {}
+}
+
+// Singleton that notifies Database when a notification from Push Subscription is arrived
+// Creates push subscriptions
+class PushManager {
+  constructor() {}
+
+	onMessage() {}
 }
 ```
 
-```ts
-// Created from Database.
-// Creates or uses existing WS connection.
-// Updates database on messages
-class SyncEngine {
-  constructor(database) {}
 
-	connect() {}
-
-	disconnect() {}
-}
-``` 
 
 #### UI Components
 ```ts
@@ -137,6 +155,7 @@ class OneChat extends HtmlElement {
 
   connectedCallback() {}
 
+  // Closes database connection
   disconnectedCallback() {}
 
   adoptedCallback() {}
@@ -154,7 +173,8 @@ class OneChatMessages extends HtmlElement {
   // Shows a pop up button when there is a selection within a message 
 	showQuoteDialog() {} 
 
-
+	// Inserts quote markap into current message box into cursor's position
+  quote() {}
 }
 
 // Wraps content editable element
@@ -164,15 +184,32 @@ class OneChatMessageBox extends HtmlElement {
   // Sanitizes input, translates it into markdown model
   onInput() {}
 
-	send() {}
+  // Sends new message to database
+	// Triggers attachment upload
+  send() {}
 }
 
 // Wraps the button of file type file, handles attachment behaviour
 // Has attribute onAttachment that gets 
 class OneChatAttachment extends HtmlElement {
   // ... Web component methods ...
+
+  // Uploads message 
+	await upload() {}
 }
 
+class OneChatSearch extends HtmlElement {
+  // ... Web component methods ...
+ 
+  // Triggers search in local cache and sends a request to search 
+  onInput() {}
+
+	// Shows preview of messages that was found in the local cache.
+	onLocalSearch() {}
+
+	// Merges result of remote and local searches. First shows local results, then remote results. 
+	onRemoteSearch() {}
+}
 ```
 
 ### Ограничения решения
@@ -181,3 +218,8 @@ class OneChatAttachment extends HtmlElement {
 
 ### Что еще можно улучшить
 - подготовить внутренние веб-компоненты чтобы можно было использовать без родительского
+- можно будет вынести работу с веб сокетом в отдельный класс, но на первом этапе это не обязательно
+- проработать обработку ошибок, таких как разрыв соединений
+- разобрать работу web push
+- разработать индексы для БД чтобы ускорить поиск
+
