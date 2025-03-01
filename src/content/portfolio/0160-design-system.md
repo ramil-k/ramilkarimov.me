@@ -1,7 +1,11 @@
 ---
 title: Intuition Design System
-tags: [Web, Svelte, SvelteKit, Three js, Canvas]
+tags: [Web, Web components ]
 draft: false
 featured: true
 ---
-# In
+# Intuition design system.
+
+Design system for narratives. [https://intuition-tech.github.io/ids/]
+
+<!-- It's a public repository with -->
