@@ -1,0 +1,57 @@
+---
+// Client-side Mermaid component as fallback
+interface Props {
+  chart: string;
+  className?: string;
+}
+
+const { chart, className = '' } = Astro.props;
+const id = `mermaid-${Math.random().toString(36).substring(2, 11)}`;
+---
+
+<div class={`mermaid-client ${className}`}>
+  <pre id={id} class="mermaid" style="display: none;">
+    {chart.trim()}
+  </pre>
+  <div id={`${id}-output`} class="mermaid-output">Loading diagram...</div>
+</div>
+
+<script>
+  import mermaid from 'mermaid';
+
+  // Initialize mermaid
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: 'default',
+    securityLevel: 'loose',
+  });
+
+  // Process all mermaid diagrams
+  document.addEventListener('DOMContentLoaded', async () => {
+    const diagrams = document.querySelectorAll('.mermaid-client pre.mermaid');
+    
+    for (const diagram of diagrams) {
+      const id = diagram.id;
+      const outputEl = document.getElementById(`${id}-output`);
+      const chart = diagram.textContent?.trim() || '';
+      
+      try {
+        // Render the diagram
+        const { svg } = await mermaid.render(`svg-${id}`, chart);
+        if (outputEl) outputEl.innerHTML = svg;
+      } catch (error) {
+        console.error('Failed to render Mermaid diagram:', error);
+        if (outputEl) {
+          outputEl.innerHTML = `<pre class="text-red-500">Error rendering diagram: ${error.message}</pre>`;
+        }
+      }
+    }
+  });
+</script>
+
+<style>
+  .mermaid-output :global(svg) {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
