@@ -1,10 +1,8 @@
 ---
 import MainLayout from '#layout/Main.astro';
-import { getCollection, getEntry, render } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
-//getEntry('portfolio', Astro.props);
-
-const { Content } = await render(await Astro.props.entry);
+const { Content } = await render(Astro.props.entry);
 
 //
 export const getStaticPaths = async () => {

@@ -1,7 +1,6 @@
 ---
 import Main from '../layout/Main.astro';
 import Mermaid from '../components/Mermaid.astro';
-import MermaidClient from '../components/MermaidClient.astro';
 
 // Example of using the Mermaid component directly
 // Using the raw string syntax to prevent template literal interpretation
@@ -42,62 +41,42 @@ graph LR
 <Main title="Mermaid Diagrams Example">
 	<div class="container mx-auto px-4 py-8">
 		<h1 class="text-3xl font-bold mb-6">Mermaid Diagrams Example</h1>
-		
+
 		<section class="mb-12">
 			<h2 class="text-2xl font-bold mb-4">Using the Server-Side Mermaid Component</h2>
 			<p class="mb-4">Here's a flowchart example using the server-side rendered Mermaid component:</p>
 			<div class="border-2 border-gray-200 p-4 rounded-lg mb-6">
 				<Mermaid chart={flowchartExample} />
 			</div>
-			
+
 			<p class="mb-4">And a sequence diagram:</p>
 			<div class="border-2 border-gray-200 p-4 rounded-lg">
 				<Mermaid chart={sequenceDiagram} />
 			</div>
-		</section>
-		
-		<section class="mb-12">
-			<h2 class="text-2xl font-bold mb-4">Using the Client-Side Fallback</h2>
-			<p class="mb-4">Here are the same diagrams rendered client-side as a fallback:</p>
-			<div class="border-2 border-gray-200 p-4 rounded-lg mb-6">
-				<MermaidClient chart={flowchartExample} />
-			</div>
-			
-			<p class="mb-4">And a sequence diagram:</p>
-			<div class="border-2 border-gray-200 p-4 rounded-lg mb-6">
-				<MermaidClient chart={sequenceDiagram} />
-			</div>
-		</section>
-		
-		<section class="mb-12">
-			<h2 class="text-2xl font-bold mb-4">Using Mermaid in Markdown</h2>
-			<p class="mb-4">In your Markdown content, you can use code blocks with the mermaid language:</p>
-			<pre class="bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto">
-```mermaid
-graph LR
-    A[Square Rect] -- Link text --> B((Circle))
-    A --> C(Round Rect)
-    B --> D{"Rhombus"}
-    C --> D
-```</pre>
-			
-			<p class="mb-4">Which will render as:</p>
-			
+
+			<p class="mb-4">And LR Graph:</p>
 			<div class="border-2 border-gray-200 p-4 rounded-lg">
-				<MermaidClient chart={lrGraph} />
+				<Mermaid chart={lrGraph} />
 			</div>
 		</section>
-		
+
 		<section>
 			<h2 class="text-2xl font-bold mb-4">Usage Instructions</h2>
 			<p>You can use Mermaid diagrams in three ways:</p>
 			<ol class="list-decimal ml-6 mb-4">
 				<li class="mb-2">In Markdown files using code blocks with the mermaid language</li>
 				<li class="mb-2">In Astro components using server-side rendering with <code>&lt;Mermaid&gt;</code></li>
-				<li class="mb-2">As a fallback, using client-side rendering with <code>&lt;MermaidClient&gt;</code></li>
 			</ol>
-			<p class="mb-4">Note: When using Mermaid syntax in Astro components, wrap your diagram strings with String.raw`` to prevent template syntax conflicts with curly braces.</p>
-			<p>For more information about Mermaid syntax, visit <a href="https://mermaid.js.org/" class="text-blue-600 hover:underline">the official Mermaid documentation</a>.</p>
+			<p class="mb-4">
+				Note: When using Mermaid syntax in Astro components, wrap your diagram strings with String.raw`` to prevent
+				template syntax conflicts with curly braces.
+			</p>
+			<p>
+				For more information about Mermaid syntax, visit <a
+					href="https://mermaid.js.org/"
+					class="text-blue-600 hover:underline">the official Mermaid documentation</a
+				>.
+			</p>
 		</section>
 	</div>
 </Main>

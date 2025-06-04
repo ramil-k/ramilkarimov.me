@@ -6,8 +6,8 @@ import fs from 'fs/promises';
 import path from 'path';
 
 interface Props {
-  chart: string;
-  className?: string;
+	chart: string;
+	className?: string;
 }
 
 const { chart, className = '' } = Astro.props;
@@ -16,59 +16,60 @@ const { chart, className = '' } = Astro.props;
 let svgHtml = '';
 
 try {
-  // Generate a unique ID for this diagram
-  const id = `mermaid-${randomUUID()}`;
+	// Generate a unique ID for this diagram
+	const id = `mermaid-${randomUUID()}`;
 
-  // Create a temporary directory if it doesn't exist
-  const tempDir = path.join(process.cwd(), 'temp');
-  await fs.mkdir(tempDir, { recursive: true }).catch(() => {
-    // Directory already exists - ignore error
-  });
+	// Create a temporary directory if it doesn't exist
+	const tempDir = path.join(process.cwd(), 'temp');
+	await fs.mkdir(tempDir, { recursive: true }).catch(() => {
+		// Directory already exists - ignore error
+	});
 
-  // Write the mermaid diagram to a temporary file
-  const mmdFilePath = path.join(tempDir, `${id}.mmd`);
-  await fs.writeFile(mmdFilePath, chart);
+	// Write the mermaid diagram to a temporary file
+	const mmdFilePath = path.join(tempDir, `${id}.mmd`);
+	await fs.writeFile(mmdFilePath, chart);
 
-  // Get the full path to the mmdc binary
-  const mmdcPath = path.join(process.cwd(), 'node_modules', '.bin', 'mmdc');
-  
-  // Generate SVG using mermaid-cli with full path
-  const svgFilePath = path.join(tempDir, `${id}.svg`);
-  
-  try {
-    // Use the full path to mmdc to avoid path issues
-    execSync(`"${mmdcPath}" -i "${mmdFilePath}" -o "${svgFilePath}" -b transparent`, {
-      stdio: ['pipe', 'pipe', 'pipe'],
-      encoding: 'utf-8'
-    });
-    
-    // Read the generated SVG
-    const svgContent = await fs.readFile(svgFilePath, 'utf-8');
-    
-    // Extract SVG content
-    const svgMatch = svgContent.match(/<svg[^>]*>[\s\S]*<\/svg>/i);
-    svgHtml = svgMatch ? svgMatch[0] : '';
-    
-  } catch (execError) {
-    console.error('Error executing mmdc:', execError);
-    svgHtml = `<pre class="text-red-500">Error rendering diagram: ${execError.message}</pre>`;
-  } finally {
-    // Clean up temporary files
-    await fs.unlink(mmdFilePath).catch(() => {});
-    await fs.unlink(svgFilePath).catch(() => {});
-  }
-  
+	// Get the full path to the mmdc binary
+	const mmdcPath = path.join(process.cwd(), 'node_modules', '.bin', 'mmdc');
+
+	// Generate SVG using mermaid-cli with full path
+	const svgFilePath = path.join(tempDir, `${id}.svg`);
+
+	try {
+		// Use the full path to mmdc to avoid path issues
+		execSync(`"${mmdcPath}" -i "${mmdFilePath}" -o "${svgFilePath}" -b transparent`, {
+			stdio: ['pipe', 'pipe', 'pipe'],
+			encoding: 'utf-8',
+		});
+
+		// Read the generated SVG
+		const svgContent = await fs.readFile(svgFilePath, 'utf-8');
+
+		// Extract SVG content
+		const svgMatch = svgContent.match(/<svg[^>]*>[\s\S]*<\/svg>/i);
+		svgHtml = svgMatch ? svgMatch[0] : '';
+	} catch (execError) {
+		console.error('Error executing mmdc:', execError);
+		svgHtml = `<pre class="text-red-500">Error rendering diagram: ${execError instanceof Error ? execError?.message : execError}</pre>`;
+	} finally {
+		// Clean up temporary files
+		await fs.unlink(mmdFilePath).catch(() => {});
+		await fs.unlink(svgFilePath).catch(() => {});
+	}
 } catch (error) {
-  console.error('Error in Mermaid component:', error);
-  svgHtml = `<pre class="text-red-500">Error processing diagram: ${error.message}</pre>`;
+	console.error('Error in Mermaid component:', error);
+	svgHtml = `<pre class="text-red-500">Error processing diagram: ${error instanceof Error ? error.message : error}</pre>`;
 }
 ---
 
-<div class={`mermaid-diagram ${className}`} set:html={svgHtml || `<pre class="text-red-500">Failed to render diagram</pre>`}></div>
+<div
+	class={`mermaid-diagram ${className}`}
+	set:html={svgHtml || `<pre class="text-red-500">Failed to render diagram</pre>`}
+/>
 
 <style>
-  .mermaid-diagram :global(svg) {
-    max-width: 100%;
-    height: auto;
-  }
+	.mermaid-diagram :global(svg) {
+		max-width: 100%;
+		height: auto;
+	}
 </style>
