@@ -4,19 +4,45 @@ layout: '#layout/Publication.astro'
 # Бэк для чекапа
 
 ## БД
-### Заявка
-- автор
-- тексты
-- id картинок
-- статус
+```mermaid
+erDiagram
+  direction LR
+  Submission {
+    Int id PK
+    Int author_id FK
+    string project_1_name
+    string project_1_description
+    string project_1_role
+    Int project_1_image FK
+    string project_2_name
+    string project_2_description
+    string project_2_role
+    Int project_2_image FK
+    string project_3_name
+    string project_3_description
+    string project_3_role
+    Int project_3_image FK
+    enum status "draft | submitted"
+  }
 
-### Картинка
-- id
-- ссылка на картинку в cld
-- статус: грузится | сохранено локально | сохранено в клаудинари | ошибка сохранения локально | ошибка сохранения в клаудинари
+  Image {
+    Int id PK
+    string cloudinary_url
+    string local_path
+    enum status "uploaded | saved-locally | saved-cld | local-upload-failure | cld-upload-failure"
+    string log "Во время загрузки картинки на сервер или клаудинари, сюда складывается лог событий"
+    string error "Во время загрузки сюда складываются ошибки"
+  }
+
+  Submission ||--o| Image : "includes"
+
+```
+
+- Добавить сущности в призму
+- Создать миграцию
+- ???
 
 ## Эндпоинты
-
 ### Черновик
 - сохранить в бд состояние формы
 
@@ -35,4 +61,9 @@ layout: '#layout/Publication.astro'
 - после того как загрузилось в клаудинари, обновить статус в бд
 
 ## Изменение поведения
-
+При загрузке формы,
+- проверять залогинен ли пользователь.
+- проверять статус записи в бд и не пускать на страницы формы, на которые нельзя.
+Если заявки нет, показывать кнопку "начать заполнять анкету", это создает черновик и переправляет на страницу формы
+Если заявка есть и она в статусе draft, показать форму
+Если заявка есть и в статусе submitted, показать финальный экран
