@@ -1,38 +1,33 @@
-# CLAUDE.md - Repository Guidelines
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Build/Development Commands
-- `pnpm dev` or `pnpm start` - Start development server
-- `pnpm build` - Build for production (runs type check and build)
+- `pnpm dev` or `pnpm start` - Start development server at localhost:4321
+- `pnpm build` - Build for production (runs type check, installs Playwright/Puppeteer browsers, builds)
 - `pnpm preview` - Preview production build
 - `pnpm lint:fix` - Fix linting and formatting issues
 - `pnpm astro check` - Run TypeScript type checking
 
 ## Code Style Guidelines
-- **Formatting**: Uses Prettier with trailing commas (ES5), single quotes, tabs
-- **TypeScript**: Follows Astro's strict TypeScript configuration
-- **Component Props**: Use TypeScript interfaces with optional properties marked with `?`
-- **Imports**: Import components with relative paths, use absolute paths for deeper imports
-- **CSS**: Use Tailwind CSS with class strings in backticks for multi-line classes
-- **Naming**: PascalCase for components, camelCase for variables and functions
+- **Formatting**: Prettier with trailing commas (ES5), single quotes, tabs
+- **TypeScript**: Astro's strict configuration
+- **Imports**: Use `#components/Foo` alias (maps to `./src/components/Foo`)
+- **CSS**: Tailwind CSS v4 with mobile-first approach (`md:`, etc.)
 - **Error Handling**: Prefer optional chaining (`?.`) and nullish coalescing (`??`)
-- **File Structure**: Group related components in subdirectories
-- **Component Templates**: Keep logic in frontmatter section, template in component body
-- **Responsiveness**: Use mobile-first approach with Tailwind breakpoints (`md:`, etc.)
 
-## Project Structure
-- `/src/components` - Reusable UI components
-- `/src/layout` - Layout templates
-- `/src/pages` - Page components and routes
-- `/src/content` - Content collections (experience, portfolio)
-- `/src/styles` - Global styles and fonts
+## Content Collections
+Two collections defined in `src/content/config.ts`:
+- **portfolio**: Projects with `title`, `tags[]`, `image?`, `draft`, `featured?`
+- **experience**: Work history with `title`, `start` (date), `end?` (date)
+
+Files are named with numeric prefix for ordering (e.g., `0050-quickBPM.md`, `2024-03-01_kyt.md`).
 
 ## Mermaid Diagrams
-- Two components available:
-  - `<Mermaid>` - Server-side rendered diagrams (no JavaScript required)
-  - `<MermaidClient>` - Client-side rendered fallback
-- In Markdown content, use code blocks with language `mermaid` for auto-rendering
-- IMPORTANT: When using node labels with curly braces (e.g., diamond shapes):
-  - In Astro components: Use `String.raw` and escape curly braces with quotes: `B{"Decision"}`
-  - In Markdown: Use quotes around text: `B["Decision"]`
-- See complete examples at `/mermaid-example` and `/mermaid-markdown-test`
-- Server-side rendering using `@mermaid-js/mermaid-cli` (no Puppeteer)
+- `<Mermaid chart={...}>` - Server-side rendered using `@mermaid-js/mermaid-cli`
+- In Markdown: use fenced code blocks with `mermaid` language (auto-rendered via remark-mermaidjs)
+- Curly braces in node labels need quotes: `B["Decision"]` in Markdown, `B{"Decision"}` with `String.raw` in Astro
+
+## Key Integrations
+- **astro-pdf**: Generates PDF from `/cv` page as `Ramil_Karimov.CV.pdf`
+- **rehype-external-links**: External links open in new tab with nofollow/noopener
