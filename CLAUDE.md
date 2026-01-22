@@ -25,7 +25,7 @@ Files are named with numeric prefix for ordering (e.g., `0050-quickBPM.md`, `202
 
 ## Mermaid Diagrams
 - `<Mermaid chart={...}>` - Server-side rendered using `@mermaid-js/mermaid-cli`
-- In Markdown: use fenced code blocks with `mermaid` language (auto-rendered via remark-mermaidjs)
+- In Markdown: use fenced code blocks with `mermaid` language (auto-rendered via rehype-mermaid)
 - Curly braces in node labels need quotes: `B["Decision"]` in Markdown, `B{"Decision"}` with `String.raw` in Astro
 
 ## Key Integrations
