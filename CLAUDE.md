@@ -21,7 +21,35 @@ Two collections defined in `src/content/config.ts`:
 - **portfolio**: Projects with `title`, `tags[]`, `image?`, `draft`, `featured?`
 - **experience**: Work history with `title`, `start` (date), `end?` (date)
 
-Files are named with numeric prefix for ordering (e.g., `0050-quickBPM.md`, `2024-03-01_kyt.md`).
+### Adding a Portfolio Project
+Create a new `.md` file in `src/content/portfolio/` with numeric prefix for ordering (lower = higher priority):
+```md
+---
+title: Project Name
+tags: [Tech1, Tech2]
+draft: false
+featured: true  # optional, shows on homepage
+image: /path/to/image.png  # optional
+---
+
+# Project content in markdown...
+```
+
+### Adding Work Experience
+Create a new `.md` file in `src/content/experience/` named `YYYY-MM-DD_company.md`:
+```md
+---
+title: Role at Company, Location
+start: "YYYY-MM-DD"
+end: "YYYY-MM-DD"  # optional, omit for current position
+---
+
+**Role:** Description
+
+**Tasks and Accomplishments:**
+- Task 1
+- Task 2
+```
 
 ## Mermaid Diagrams
 - `<Mermaid chart={...}>` - Server-side rendered using `@mermaid-js/mermaid-cli`
