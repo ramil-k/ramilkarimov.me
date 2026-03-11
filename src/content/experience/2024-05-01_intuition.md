@@ -20,7 +20,7 @@ start: "2024-05-01"
 **Role:** Full stack developer.
 
 **Tasks and Accomplishments:**
-I am responsible for developing one of the client products.
-For the studio's website, I created many complex visual components and components with complex logic.
-Ported components to an HTML-only version of the internal library.
-
+- Built complex visual and interactive components for the studio's website; ported components to an HTML-only version of the internal library
+- Built the Design Checkup system
+- Implemented video course platform with persistent playback position tracking
+- Implemented promo collection filtering with multi-project support and dynamic image refresh
