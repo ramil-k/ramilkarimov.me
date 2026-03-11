@@ -13,5 +13,3 @@ end: '2017-12-01'
 **Languages:** Javascript, Java
 
 **Tools:** Gulp, Webpack, ES6, Angular, Accessibility testing tools, Flash to html5 conversion tools
-
-Left so I can work remotely.
