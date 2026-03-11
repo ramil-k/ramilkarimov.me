@@ -1,5 +1,5 @@
 ---
-title:  Software engineer, Competentum, Izhevsk, Russia
+title: Software Engineer, Competentum, Izhevsk, Russia
 start: '2017-05-01'
 end: '2017-12-01'
 ---
@@ -10,6 +10,6 @@ end: '2017-12-01'
 - Developed multiple educational games and demos
 - Held a series of internal seminars on unit testing and CI
 
-**Languages:** Javascript, Java
+**Languages:** JavaScript, Java
 
-**Tools:** Gulp, Webpack, ES6, Angular, Accessibility testing tools, Flash to html5 conversion tools
+**Tools:** Gulp, Webpack, ES6, Angular, Accessibility testing tools, Flash to HTML5 conversion tools

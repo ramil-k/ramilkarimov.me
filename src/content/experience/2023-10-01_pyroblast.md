@@ -7,7 +7,7 @@ end: '2024-03-01'
 
 Gamer-oriented chat platform, got cancelled.
 
-**Role:** Developer of the desktop electron app.
+**Role:** Developer of the desktop Electron app.
 
 **Tasks and Accomplishments:**
 
@@ -15,5 +15,5 @@ Gamer-oriented chat platform, got cancelled.
 - Automated builds for all platforms using GitHub Actions; Telegram bot reports links on successful builds
 - Implemented authentication with Google and email; set up deep links from email into the app
 - Added design tokens to designer's pipeline with automatic CSS variable generation
-- Organised a Turborepo monorepo separating web and electron apps, components, generated styles, types, and Storybook
+- Organized a Turborepo monorepo separating web and electron apps, components, generated styles, types, and Storybook
 - Made the layout with right-to-left languages in mind so that Arabic, Hebrew, and Asian users can use the app comfortably
