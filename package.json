@@ -15,11 +15,10 @@
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.9.9",
-		"@astrojs/tailwind": "^6.0.2",
 		"@evilmartians/harmony": "^1.4.0",
 		"@mermaid-js/mermaid-cli": "^11.14.0",
 		"@tailwindcss/vite": "^4.3.0",
-		"astro": "^5.16.12",
+		"astro": "^6.3.1",
 		"astro-pdf": "^1.8.0",
 		"mermaid": "^11.15.0",
 		"playwright": "^1.60.0",
