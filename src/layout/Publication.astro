@@ -12,22 +12,13 @@ const { showHeader = true } = Astro.props;
 		<Meta />
 		<title>Ramil Karimov, Front-end developer</title>
 	</head>
-	<body class="flex min-h-[100vh] flex-col font-display">
+	<body class="font-display flex min-h-[100vh] flex-col">
 		{showHeader && <Header />}
 
 		<!-- ========== MAIN CONTENT ========== -->
 		<main class="grow-1" id="content" role="main">
 			<div
-				class="lg:max-width-3/4
-			mx-auto
-			my-20
-			lg:prose-xl
-			prose
-			prose-headings:mb-0
-			prose-headings:mt-0.5
-			prose-ul:my-0
-			prose-li:my-0
-			prose-p:m-0"
+				class="lg:max-width-3/4 lg:prose-xl prose prose-headings:mb-0 prose-headings:mt-0.5 prose-ul:my-0 prose-li:my-0 prose-p:m-0 mx-auto my-20"
 			>
 				<slot />
 			</div>

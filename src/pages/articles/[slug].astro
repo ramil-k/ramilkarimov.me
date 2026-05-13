@@ -15,15 +15,15 @@ export const getStaticPaths = async () => {
 ---
 
 <MainLayout showHeader>
-	<div class="flex min-h-[50vh] w-full flex-col place-items-center justify-center bg-yellow-vibrant">
+	<div class="bg-yellow-vibrant flex min-h-[50vh] w-full flex-col place-items-center justify-center">
 		<span class="w-full text-center text-6xl">WIP</span>
 		<span class="text-center text-lg sm:w-3/4 sm:text-2xl"> Yes, this page is supposed to look like this.</span>
-		<span class="text-center text-lg text-fuchsia-vibrant sm:w-3/4 sm:text-2xl">
+		<span class="text-fuchsia-vibrant text-center text-lg sm:w-3/4 sm:text-2xl">
 			And all articles are drafts for now.
 		</span>
 	</div>
 	<div
-		class="lg:max-width-3/4 prose mx-auto p-5 lg:prose-xl prose-headings:mb-0 prose-headings:mt-0.5 prose-ul:my-0 prose-li:my-0"
+		class="lg:max-width-3/4 prose lg:prose-xl prose-headings:mb-0 prose-headings:mt-0.5 prose-ul:my-0 prose-li:my-0 mx-auto p-5"
 	>
 		<!--{JSON.stringify(Object.keys(content))}-->
 		<Content />

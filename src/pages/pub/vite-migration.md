@@ -1,18 +1,22 @@
 ---
 layout: '#layout/Publication.astro'
 ---
+
 # Интеграция Vite во фронтенд OneVizion
 
 ## Описание
 
 Заменяю gulp и вообще всё подключение скриптов и стилей на vite. Это дает нам:
+
 - Hot Module Replacement (HMR)
 - Корректную сборку с tree-shaking и code splitting
 - Автоматический сброс кеша через хеши в именах файлов
 - Сборку CSS вместе с JS
 
-## Начальная архитектура 
-### Dev режим 
+## Начальная архитектура
+
+### Dev режим
+
 ```mermaid
 flowchart LR
     subgraph "Браузер"
@@ -40,6 +44,7 @@ flowchart LR
 ```
 
 ### Prod режим: сборка
+
 ```mermaid
 flowchart LR
     subgraph "Сборка (Gulp)"
@@ -57,6 +62,7 @@ flowchart LR
 ```
 
 ### Prod режим: запросы
+
 ```mermaid
 flowchart LR
     subgraph "Файловая система"
@@ -78,16 +84,20 @@ flowchart LR
 ```
 
 **Проблемы (решаемые):**
+
 - Кастомный скрипт сборки для продакшена
 - Нет HMR, полная перезагрузка страницы при изменениях
 - Параметр версии для сброса кеша (легко устаревает)
 
 **Проблемы (отложены на будущее):**
+
 - Ручной контроль порядка скриптов
 - Загрязнение глобальной области видимости (все классы на window)
 
-## Итоговая архитектура 
-### Dev режим 
+## Итоговая архитектура
+
+### Dev режим
+
 ```mermaid
 flowchart LR
     subgraph "Браузер"
@@ -116,6 +126,7 @@ flowchart LR
 ```
 
 ### Prod режим: сборка
+
 ```mermaid
 flowchart LR
     subgraph "Entry Points"
@@ -138,6 +149,7 @@ flowchart LR
 ```
 
 ### Prod режим: запросы
+
 ```mermaid
 flowchart LR
     subgraph "Файловая система"
@@ -198,15 +210,15 @@ flowchart LR
 
 ### Добавленные файлы
 
-| Файл | Назначение |
-|------|------------|
-| `web/vite.config.js` | Конфигурация Vite с entry points и плагинами |
-| `web/vite-plugin-expose-globals.js` | AST-плагин для экспорта классов в window |
-| `web/tsconfig.json` | TypeScript конфиг для поддержки IDE |
-| `ViteDevModeHolder.java` | Spring bean для определения dev режима |
-| `ViteManifestReader.java` | Парсит manifest.json для путей к ассетам в продакшене |
-| `viteAsset.tag` | JSP тег для подключения Vite ассетов |
-| `entries/**/*.js` | Entry points бандлов с импортами |
+| Файл                                | Назначение                                            |
+| ----------------------------------- | ----------------------------------------------------- |
+| `web/vite.config.js`                | Конфигурация Vite с entry points и плагинами          |
+| `web/vite-plugin-expose-globals.js` | AST-плагин для экспорта классов в window              |
+| `web/tsconfig.json`                 | TypeScript конфиг для поддержки IDE                   |
+| `ViteDevModeHolder.java`            | Spring bean для определения dev режима                |
+| `ViteManifestReader.java`           | Парсит manifest.json для путей к ассетам в продакшене |
+| `viteAsset.tag`                     | JSP тег для подключения Vite ассетов                  |
+| `entries/**/*.js`                   | Entry points бандлов с импортами                      |
 
 ### Процесс в Dev режиме
 
@@ -283,6 +295,7 @@ flowchart LR
 ```
 
 **Проблемы старого подхода:**
+
 - `gulp-deporder` требовал ручных `@requires` комментариев в каждом файле
 - Один монолитный бандл без code splitting
 - Невозможность tree-shaking
@@ -322,6 +335,7 @@ flowchart TB
 **Вход:** glob `components/mixins/**/*.js`
 
 **Выход:** `entries/components/core.js`
+
 ```javascript
 import './core.css';
 import '../../components/Component.js';
@@ -349,14 +363,14 @@ gulp/
 
 ### Сравнение подходов
 
-| Аспект | Старый Gulp | Новый Gulp + Vite |
-|--------|-------------|-------------------|
-| Задача Gulp | Сборка бандла | Генерация entry points |
-| Порядок файлов | @requires комментарии | ES imports |
-| Минификация | gulp-terser | Vite (esbuild) |
-| Sourcemaps | gulp-sourcemaps | Vite (встроенные) |
-| HMR | Нет | Да |
-| Tree-shaking | Нет | Да |
+| Аспект         | Старый Gulp           | Новый Gulp + Vite      |
+| -------------- | --------------------- | ---------------------- |
+| Задача Gulp    | Сборка бандла         | Генерация entry points |
+| Порядок файлов | @requires комментарии | ES imports             |
+| Минификация    | gulp-terser           | Vite (esbuild)         |
+| Sourcemaps     | gulp-sourcemaps       | Vite (встроенные)      |
+| HMR            | Нет                   | Да                     |
+| Tree-shaking   | Нет                   | Да                     |
 
 ## Плагин expose-globals
 
@@ -387,18 +401,19 @@ flowchart LR
 
 Скрипт миграции (`migrate-to-vite-entries.mjs`) анализирует все JSP/tag файлы и определяет какие скрипты требуют Vite bundling:
 
-| Тип файлов | Всего | Требуют entry |
-|------------|-------|---------------|
-| JSP страницы | 614 | 21 |
-| Tag файлы | 91 | 8 |
-| **Итого** | **705** | **29** |
-| Vite entry points | - | 48 |
+| Тип файлов        | Всего   | Требуют entry |
+| ----------------- | ------- | ------------- |
+| JSP страницы      | 614     | 21            |
+| Tag файлы         | 91      | 8             |
+| **Итого**         | **705** | **29**        |
+| Vite entry points | -       | 48            |
 
 Entry points больше чем JSP/tag потому что включают общие компоненты (Gulp) и conditional entries.
 
 ### Скрипт миграции
 
 Скрипт автоматически:
+
 1. Сканирует JSP/tag файлы на `<script src="...">` теги
 2. Проверяет содержимое каждого скрипта на паттерны требующие Vite:
    - `class X extends Component`
@@ -463,6 +478,7 @@ flowchart TB
 ### Как JSP/Tag соотносится с Entry
 
 **До миграции** (includeConfigFields.tag):
+
 ```jsp
 <script src="/components/configForm/cfields/AbstractCField.js?ver=${ver}"></script>
 <script src="/components/configForm/cfields/CFieldText.js?ver=${ver}"></script>
@@ -471,11 +487,13 @@ flowchart TB
 ```
 
 **После миграции** (includeConfigFields.tag):
+
 ```jsp
 <ps:viteAsset src="entries/pages/tags/includeConfigFields.js"/>
 ```
 
 **Entry point** (entries/pages/tags/includeConfigFields.js):
+
 ```javascript
 import '../../../components/configForm/cfields/AbstractCField.js';
 import '../../../components/configForm/cfields/CFieldText.js';
@@ -485,30 +503,31 @@ import '../../../components/configForm/cfields/CFieldNumber.js';
 
 ### Типы entry points по назначению
 
-| Категория | Примеры | Генерация | Назначение |
-|-----------|---------|-----------|------------|
-| **Компоненты** | `core.js`, `common.js`, `calendar.js` | Gulp | Общие библиотеки для всех страниц |
-| **Страницы** | `admin/rules/FilterTab.js` | Скрипт миграции | JS специфичный для конкретной JSP |
-| **Теги** | `tags/includeConfigFields.js` | Скрипт миграции | JS для переиспользуемых tag-файлов |
-| **Грид** | `grid/grid.js`, `grid/excell.js` | Gulp | Компоненты грида |
+| Категория      | Примеры                               | Генерация       | Назначение                         |
+| -------------- | ------------------------------------- | --------------- | ---------------------------------- |
+| **Компоненты** | `core.js`, `common.js`, `calendar.js` | Gulp            | Общие библиотеки для всех страниц  |
+| **Страницы**   | `admin/rules/FilterTab.js`            | Скрипт миграции | JS специфичный для конкретной JSP  |
+| **Теги**       | `tags/includeConfigFields.js`         | Скрипт миграции | JS для переиспользуемых tag-файлов |
+| **Грид**       | `grid/grid.js`, `grid/excell.js`      | Gulp            | Компоненты грида                   |
 
 ### Покрытие миграцией
 
 Из 705 JSP/tag файлов только 29 содержат скрипты требующие Vite bundling. Остальные либо:
+
 - Используют только общие компоненты из `pageHeader.tag`
 - Содержат только библиотечные скрипты (исключены из миграции)
 - Не содержат скриптов вообще
 
 ## Статистика
 
-| Метрика | До | После |
-|---------|-----|-------|
-| Изменено файлов | - | 191 |
-| Добавлено строк | - | 6,665 |
-| Удалено строк | - | 2,917 |
-| Размер pageHeader.tag | ~500 строк | ~65 строк |
-| HTTP запросов (dev) | 100+ | ~20 entry чанков |
-| Сброс кеша | параметр `?ver=` | Хеш в имени файла |
+| Метрика               | До               | После             |
+| --------------------- | ---------------- | ----------------- |
+| Изменено файлов       | -                | 191               |
+| Добавлено строк       | -                | 6,665             |
+| Удалено строк         | -                | 2,917             |
+| Размер pageHeader.tag | ~500 строк       | ~65 строк         |
+| HTTP запросов (dev)   | 100+             | ~20 entry чанков  |
+| Сброс кеша            | параметр `?ver=` | Хеш в имени файла |
 
 ## Коммиты
 
@@ -554,6 +573,7 @@ flowchart TB
 ### Использование
 
 **Разработка (с HMR):**
+
 ```bash
 mvn jetty:run -DdevMode=true
 
@@ -562,6 +582,7 @@ mvn jetty:run -DdevMode=true
 ```
 
 **Продакшен (со сборкой):**
+
 ```bash
 mvn jetty:run
 

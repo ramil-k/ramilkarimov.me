@@ -3,6 +3,7 @@ title: Software Engineer, Competentum, Izhevsk, Russia
 start: '2017-05-01'
 end: '2017-12-01'
 ---
+
 **Role:** Frontend developer
 
 **Tasks and Accomplishments**:

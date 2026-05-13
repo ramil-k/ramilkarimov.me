@@ -4,4 +4,3 @@ tags: [Web, Svelte, Svelte kit, Canvas, SQL]
 draft: false
 featured: false
 ---
-

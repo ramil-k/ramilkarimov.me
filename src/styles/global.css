@@ -327,23 +327,29 @@
 		'Segoe UI Symbol', 'Noto Color Emoji';
 
 	--background-image-hero:
-		radial-gradient(circle at 0% in oklch,
+		radial-gradient(
+			circle at 0% in oklch,
 			transparent,
 			oklch(50% 0.185 20 / 0.3) 65%,
 			oklch(50% 0.185 20 / 0.5) 80%,
 			oklch(50% 0.185 20 / 0.5) 90%,
 			oklch(50% 0.185 20 / 0) 90.2%,
-			oklch(50% 0.185 20 / 1) 120%),
-		radial-gradient(farthest-corner at 75% 65% in oklch,
+			oklch(50% 0.185 20 / 1) 120%
+		),
+		radial-gradient(
+			farthest-corner at 75% 65% in oklch,
 			oklch(50.31% 0.25 280 / 1),
 			oklch(50.31% 0.25 280 / 0.8) 5%,
 			transparent 20%,
-			transparent),
-		radial-gradient(farthest-corner at 20% 35% in oklch,
+			transparent
+		),
+		radial-gradient(
+			farthest-corner at 20% 35% in oklch,
 			oklch(65% 0.27 20 / 1),
 			oklch(65% 0.27 20 / 1) 1%,
 			oklch(90% 0.17 100 / 1) 15%,
-			oklch(90% 0.17 100 / 1) 150%);
+			oklch(90% 0.17 100 / 1) 150%
+		);
 
 	--shadow-inset-border: inset -5px -5px 0px 6px var(--tw-shadow);
 }
@@ -370,10 +376,9 @@
 	}
 }
 
-
 @layer base {
 	:focus-visible {
-		@apply outline-2 outline-offset-2 outline-blue-vibrant;
+		@apply outline-blue-vibrant outline-2 outline-offset-2;
 	}
 }
 

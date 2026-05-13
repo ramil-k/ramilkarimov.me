@@ -1,8 +1,7 @@
 ---
 title: Part-time Full Stack Developer at design bureau, Intuition, Remote
-start: "2024-05-01"
+start: '2024-05-01'
 ---
-
 
 <!--#### Project: Inutuition Studio website-->
 <!--что я вообще тут делаю? я внедрил плеер, сделал работу картинок и видео через клаудинари, мигрировал бд-->
@@ -20,6 +19,7 @@ start: "2024-05-01"
 **Role:** Full stack developer.
 
 **Tasks and Accomplishments:**
+
 - Built complex visual and interactive components for the studio's website; ported components to an HTML-only version of the internal library
 - Built the Design Checkup system
 - Implemented video course platform with persistent playback position tracking

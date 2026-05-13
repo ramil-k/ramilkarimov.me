@@ -40,30 +40,30 @@ graph LR
 
 <Main title="Mermaid Diagrams Example">
 	<div class="container mx-auto px-4 py-8">
-		<h1 class="text-3xl font-bold mb-6">Mermaid Diagrams Example</h1>
+		<h1 class="mb-6 text-3xl font-bold">Mermaid Diagrams Example</h1>
 
 		<section class="mb-12">
-			<h2 class="text-2xl font-bold mb-4">Using the Server-Side Mermaid Component</h2>
+			<h2 class="mb-4 text-2xl font-bold">Using the Server-Side Mermaid Component</h2>
 			<p class="mb-4">Here's a flowchart example using the server-side rendered Mermaid component:</p>
-			<div class="border-2 border-gray-200 p-4 rounded-lg mb-6">
+			<div class="mb-6 rounded-lg border-2 border-gray-200 p-4">
 				<Mermaid chart={flowchartExample} />
 			</div>
 
 			<p class="mb-4">And a sequence diagram:</p>
-			<div class="border-2 border-gray-200 p-4 rounded-lg">
+			<div class="rounded-lg border-2 border-gray-200 p-4">
 				<Mermaid chart={sequenceDiagram} />
 			</div>
 
 			<p class="mb-4">And LR Graph:</p>
-			<div class="border-2 border-gray-200 p-4 rounded-lg">
+			<div class="rounded-lg border-2 border-gray-200 p-4">
 				<Mermaid chart={lrGraph} />
 			</div>
 		</section>
 
 		<section>
-			<h2 class="text-2xl font-bold mb-4">Usage Instructions</h2>
+			<h2 class="mb-4 text-2xl font-bold">Usage Instructions</h2>
 			<p>You can use Mermaid diagrams in three ways:</p>
-			<ol class="list-decimal ml-6 mb-4">
+			<ol class="mb-4 ml-6 list-decimal">
 				<li class="mb-2">In Markdown files using code blocks with the mermaid language</li>
 				<li class="mb-2">In Astro components using server-side rendering with <code>&lt;Mermaid&gt;</code></li>
 			</ol>

@@ -14,10 +14,13 @@ export default defineConfig({
 		},
 		rehypePlugins: [
 			[rehypeMermaid, { strategy: 'img-svg' }],
-			[rehypeExternalLinks, {
-				target: '_blank',
-				rel: ['nofollow', 'noopener', 'noreferrer']
-			}],
+			[
+				rehypeExternalLinks,
+				{
+					target: '_blank',
+					rel: ['nofollow', 'noopener', 'noreferrer'],
+				},
+			],
 		],
 	},
 	vite: {

@@ -14,6 +14,7 @@ Full-featured SvelteKit platform for design education and digital product sales 
 Full-stack developer (May 2024 – present), implementing core product features across frontend and backend.
 
 **Key work:**
+
 - Built complex visual and interactive components for the studio's website; ported components to an HTML-only version of the internal library
 - Built the Design Checkup system
 - Implemented video course platform with persistent playback position tracking
