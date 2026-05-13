@@ -16,26 +16,9 @@ const portfolio = await getCollection('portfolio').then((p) => {
 	{
 		portfolio.map(({ data, id }) => (
 			<Card tags={data.tags} featured={data.featured}>
-				<a class="card-clickable min-w-min max-w-max" slot="name" href={`/articles/${id}`}>
-					{data.title}
-				</a>
+				<span slot="name">{data.title}</span>
 			</Card>
 		))
 	}
 </div>
 
-<style>
-	.card-clickable {
-		display: block;
-	}
-
-	.card-clickable:before {
-		position: absolute;
-		content: ' ';
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		z-index: -1;
-	}
-</style>
